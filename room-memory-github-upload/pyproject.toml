@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "where-did-my-stuff-go"
+version = "0.1.0"
+description = "Real-video baseline for searchable room objects"
+requires-python = ">=3.10"
+dependencies = ["opencv-python>=4.8", "numpy>=1.24"]
+
+[project.optional-dependencies]
+detection = ["ultralytics>=8.3"]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

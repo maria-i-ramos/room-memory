@@ -1,0 +1,10 @@
+video,object,present,coco_label,coco_supported,found_by_yolo
+IMG_4203.MOV,remote,yes,remote,yes,not tested
+IMG_4203.MOV,eyeglasses,yes,none,no,not tested
+IMG_4203.MOV,keys,yes,none,no,not tested
+IMG_4206.MOV,water bottle,yes,bottle,yes,not tested
+IMG_4206.MOV,book,yes,book,yes,not tested
+IMG_4206.MOV,keys,yes,none,no,not tested
+IMG_4207.MOV,water bottle,yes,bottle,yes,not tested
+IMG_4207.MOV,sunglasses,yes,none,no,not tested
+IMG_4207.MOV,wired earbuds,yes,none,no,not tested

@@ -1,0 +1,26 @@
+{
+  "video": "IMG_4206.MOV",
+  "objects": [
+    {
+      "object": "water bottle",
+      "coco_label": "bottle",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "book",
+      "coco_label": "book",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "keys",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    }
+  ]
+}
