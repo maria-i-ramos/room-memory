@@ -1,10 +1,10 @@
-video,object,present,coco_label,coco_supported,found_by_yolo
-IMG_4203.MOV,remote,yes,remote,yes,not tested
-IMG_4203.MOV,eyeglasses,yes,none,no,not tested
-IMG_4203.MOV,keys,yes,none,no,not tested
-IMG_4206.MOV,water bottle,yes,bottle,yes,not tested
-IMG_4206.MOV,book,yes,book,yes,not tested
-IMG_4206.MOV,keys,yes,none,no,not tested
-IMG_4207.MOV,water bottle,yes,bottle,yes,not tested
-IMG_4207.MOV,sunglasses,yes,none,no,not tested
-IMG_4207.MOV,wired earbuds,yes,none,no,not tested
+video,object,present,coco_label,coco_supported,found_by_yolo,notes
+IMG_4203.MOV,remote,yes,remote,yes,yes,"10 of 32 frames at 2 FPS, best confidence 0.97"
+IMG_4203.MOV,eyeglasses,yes,none,no,no (mislabeled),"boxed but labeled 'mouse' (0.69)"
+IMG_4203.MOV,keys,yes,none,no,no (mislabeled),"boxed but labeled 'scissors' (0.94) and 'airplane' (0.75)"
+IMG_4206.MOV,water bottle,yes,bottle,yes,yes,"4 of 31 frames, best 0.82"
+IMG_4206.MOV,book,yes,book,yes,yes,"4 of 31 frames, best 0.44 (weak)"
+IMG_4206.MOV,keys,yes,none,no,no,not boxed at all
+IMG_4207.MOV,water bottle,yes,bottle,yes,yes,"8 of 31 frames, best 0.83; also labeled 'vase' (0.84) in some frames"
+IMG_4207.MOV,sunglasses,yes,none,no,no,not boxed at all
+IMG_4207.MOV,wired earbuds,yes,none,no,no,not boxed at all
