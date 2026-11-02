@@ -1,0 +1,338 @@
+[
+  {
+    "label": "mouse",
+    "confidence": 0.525,
+    "timestamp_seconds": 0.5,
+    "source_frame_index": 15,
+    "xyxy": [
+      235.9,
+      0.0,
+      2055.2,
+      1260.9
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.55,
+    "timestamp_seconds": 1.0,
+    "source_frame_index": 30,
+    "xyxy": [
+      130.6,
+      0.0,
+      1887.6,
+      1231.7
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.546,
+    "timestamp_seconds": 1.5,
+    "source_frame_index": 45,
+    "xyxy": [
+      12.4,
+      90.8,
+      1813.1,
+      1394.0
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.54,
+    "timestamp_seconds": 2.0,
+    "source_frame_index": 60,
+    "xyxy": [
+      0.7,
+      87.1,
+      1766.4,
+      1392.7
+    ]
+  },
+  {
+    "label": "book",
+    "confidence": 0.302,
+    "timestamp_seconds": 2.0,
+    "source_frame_index": 60,
+    "xyxy": [
+      1076.5,
+      1547.3,
+      2160.0,
+      2573.8
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.367,
+    "timestamp_seconds": 2.5,
+    "source_frame_index": 75,
+    "xyxy": [
+      4.7,
+      104.9,
+      1469.6,
+      1418.1
+    ]
+  },
+  {
+    "label": "cup",
+    "confidence": 0.264,
+    "timestamp_seconds": 2.5,
+    "source_frame_index": 75,
+    "xyxy": [
+      5.5,
+      103.4,
+      1469.7,
+      1419.2
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.312,
+    "timestamp_seconds": 3.0,
+    "source_frame_index": 90,
+    "xyxy": [
+      3.3,
+      71.5,
+      1373.8,
+      1393.2
+    ]
+  },
+  {
+    "label": "toilet",
+    "confidence": 0.43,
+    "timestamp_seconds": 6.0,
+    "source_frame_index": 180,
+    "xyxy": [
+      1115.9,
+      2211.1,
+      2157.4,
+      3836.9
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.295,
+    "timestamp_seconds": 7.0,
+    "source_frame_index": 210,
+    "xyxy": [
+      521.9,
+      1942.5,
+      1808.3,
+      3565.9
+    ]
+  },
+  {
+    "label": "clock",
+    "confidence": 0.265,
+    "timestamp_seconds": 7.0,
+    "source_frame_index": 210,
+    "xyxy": [
+      0.7,
+      1073.3,
+      190.3,
+      1687.2
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.386,
+    "timestamp_seconds": 8.0,
+    "source_frame_index": 240,
+    "xyxy": [
+      26.2,
+      1792.0,
+      1260.3,
+      3279.5
+    ]
+  },
+  {
+    "label": "spoon",
+    "confidence": 0.527,
+    "timestamp_seconds": 8.5,
+    "source_frame_index": 255,
+    "xyxy": [
+      1009.8,
+      1836.4,
+      2155.9,
+      2182.7
+    ]
+  },
+  {
+    "label": "spoon",
+    "confidence": 0.532,
+    "timestamp_seconds": 9.0,
+    "source_frame_index": 270,
+    "xyxy": [
+      887.6,
+      1689.5,
+      2156.2,
+      2137.0
+    ]
+  },
+  {
+    "label": "spoon",
+    "confidence": 0.435,
+    "timestamp_seconds": 9.5,
+    "source_frame_index": 285,
+    "xyxy": [
+      714.9,
+      1686.8,
+      2158.5,
+      2202.7
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.29,
+    "timestamp_seconds": 9.5,
+    "source_frame_index": 285,
+    "xyxy": [
+      4.3,
+      1771.6,
+      762.7,
+      3137.4
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.382,
+    "timestamp_seconds": 10.0,
+    "source_frame_index": 300,
+    "xyxy": [
+      2.6,
+      1856.2,
+      447.3,
+      3271.9
+    ]
+  },
+  {
+    "label": "cup",
+    "confidence": 0.26,
+    "timestamp_seconds": 10.0,
+    "source_frame_index": 300,
+    "xyxy": [
+      982.0,
+      1706.7,
+      2152.0,
+      3700.6
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.734,
+    "timestamp_seconds": 12.5,
+    "source_frame_index": 375,
+    "xyxy": [
+      1713.3,
+      35.1,
+      2156.3,
+      1055.2
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.829,
+    "timestamp_seconds": 13.0,
+    "source_frame_index": 390,
+    "xyxy": [
+      1499.9,
+      7.2,
+      2153.6,
+      1124.8
+    ]
+  },
+  {
+    "label": "toothbrush",
+    "confidence": 0.26,
+    "timestamp_seconds": 13.0,
+    "source_frame_index": 390,
+    "xyxy": [
+      215.5,
+      122.1,
+      649.4,
+      1621.4
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.876,
+    "timestamp_seconds": 13.5,
+    "source_frame_index": 405,
+    "xyxy": [
+      1309.4,
+      16.6,
+      2059.5,
+      1167.1
+    ]
+  },
+  {
+    "label": "spoon",
+    "confidence": 0.287,
+    "timestamp_seconds": 13.5,
+    "source_frame_index": 405,
+    "xyxy": [
+      9.3,
+      180.6,
+      449.2,
+      1703.3
+    ]
+  },
+  {
+    "label": "sink",
+    "confidence": 0.274,
+    "timestamp_seconds": 13.5,
+    "source_frame_index": 405,
+    "xyxy": [
+      10.7,
+      28.1,
+      2156.6,
+      3838.9
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.893,
+    "timestamp_seconds": 14.0,
+    "source_frame_index": 420,
+    "xyxy": [
+      1075.6,
+      52.4,
+      1834.8,
+      1294.5
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.791,
+    "timestamp_seconds": 14.5,
+    "source_frame_index": 435,
+    "xyxy": [
+      901.3,
+      210.5,
+      1692.5,
+      1419.3
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.832,
+    "timestamp_seconds": 15.0,
+    "source_frame_index": 450,
+    "xyxy": [
+      770.2,
+      344.2,
+      1664.5,
+      1724.0
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.461,
+    "timestamp_seconds": 15.5,
+    "source_frame_index": 465,
+    "xyxy": [
+      761.4,
+      471.6,
+      1647.3,
+      1836.2
+    ]
+  }
+]

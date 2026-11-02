@@ -1,0 +1,13 @@
+{
+  "frames_processed": 32,
+  "detections": 55,
+  "labels_seen": [
+    "keyboard",
+    "laptop",
+    "mouse",
+    "person",
+    "surfboard"
+  ],
+  "processing_seconds": 6.25,
+  "model": "yolo11n.pt"
+}

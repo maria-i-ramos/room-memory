@@ -1,0 +1,890 @@
+[
+  {
+    "label": "laptop",
+    "confidence": 0.415,
+    "timestamp_seconds": 0.0,
+    "source_frame_index": 0,
+    "xyxy": [
+      6.2,
+      743.4,
+      2156.3,
+      2357.8
+    ]
+  },
+  {
+    "label": "surfboard",
+    "confidence": 0.313,
+    "timestamp_seconds": 0.0,
+    "source_frame_index": 0,
+    "xyxy": [
+      0.0,
+      2358.3,
+      2149.7,
+      3831.2
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.558,
+    "timestamp_seconds": 0.5,
+    "source_frame_index": 15,
+    "xyxy": [
+      8.0,
+      773.4,
+      2156.4,
+      2348.7
+    ]
+  },
+  {
+    "label": "surfboard",
+    "confidence": 0.372,
+    "timestamp_seconds": 0.5,
+    "source_frame_index": 15,
+    "xyxy": [
+      0.0,
+      2335.1,
+      2154.5,
+      3830.8
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.369,
+    "timestamp_seconds": 1.0,
+    "source_frame_index": 30,
+    "xyxy": [
+      5.9,
+      798.3,
+      2153.2,
+      2372.2
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.619,
+    "timestamp_seconds": 1.5,
+    "source_frame_index": 45,
+    "xyxy": [
+      8.2,
+      799.5,
+      2156.0,
+      2387.2
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.899,
+    "timestamp_seconds": 2.0,
+    "source_frame_index": 60,
+    "xyxy": [
+      5.9,
+      791.6,
+      2124.0,
+      2398.5
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.839,
+    "timestamp_seconds": 2.5,
+    "source_frame_index": 75,
+    "xyxy": [
+      5.7,
+      784.6,
+      1975.6,
+      2412.2
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.614,
+    "timestamp_seconds": 2.5,
+    "source_frame_index": 75,
+    "xyxy": [
+      1949.3,
+      2317.8,
+      2157.1,
+      3169.1
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.759,
+    "timestamp_seconds": 3.0,
+    "source_frame_index": 90,
+    "xyxy": [
+      1736.4,
+      2298.1,
+      2160.0,
+      3186.8
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.725,
+    "timestamp_seconds": 3.0,
+    "source_frame_index": 90,
+    "xyxy": [
+      1658.6,
+      791.6,
+      2159.4,
+      1311.2
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.69,
+    "timestamp_seconds": 3.0,
+    "source_frame_index": 90,
+    "xyxy": [
+      3.2,
+      794.1,
+      1721.0,
+      2445.3
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.684,
+    "timestamp_seconds": 3.5,
+    "source_frame_index": 105,
+    "xyxy": [
+      7.2,
+      814.7,
+      1307.4,
+      2440.1
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.648,
+    "timestamp_seconds": 3.5,
+    "source_frame_index": 105,
+    "xyxy": [
+      1323.4,
+      2282.5,
+      2160.0,
+      3206.8
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.888,
+    "timestamp_seconds": 4.0,
+    "source_frame_index": 120,
+    "xyxy": [
+      1457.5,
+      195.4,
+      2160.0,
+      859.4
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.753,
+    "timestamp_seconds": 4.0,
+    "source_frame_index": 120,
+    "xyxy": [
+      1493.8,
+      766.5,
+      2006.5,
+      1177.3
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.701,
+    "timestamp_seconds": 4.0,
+    "source_frame_index": 120,
+    "xyxy": [
+      5.6,
+      905.0,
+      931.2,
+      2505.2
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.543,
+    "timestamp_seconds": 4.0,
+    "source_frame_index": 120,
+    "xyxy": [
+      945.9,
+      2380.0,
+      2156.5,
+      3322.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.928,
+    "timestamp_seconds": 4.5,
+    "source_frame_index": 135,
+    "xyxy": [
+      1137.0,
+      203.3,
+      2160.0,
+      923.0
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.887,
+    "timestamp_seconds": 4.5,
+    "source_frame_index": 135,
+    "xyxy": [
+      1169.6,
+      785.8,
+      1683.0,
+      1207.1
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.616,
+    "timestamp_seconds": 4.5,
+    "source_frame_index": 135,
+    "xyxy": [
+      552.4,
+      896.5,
+      1123.5,
+      1416.0
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.56,
+    "timestamp_seconds": 4.5,
+    "source_frame_index": 135,
+    "xyxy": [
+      626.3,
+      2500.2,
+      2158.8,
+      3430.7
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.516,
+    "timestamp_seconds": 4.5,
+    "source_frame_index": 135,
+    "xyxy": [
+      5.0,
+      978.0,
+      599.3,
+      2564.8
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.935,
+    "timestamp_seconds": 5.0,
+    "source_frame_index": 150,
+    "xyxy": [
+      932.8,
+      229.0,
+      2158.2,
+      941.3
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.861,
+    "timestamp_seconds": 5.0,
+    "source_frame_index": 150,
+    "xyxy": [
+      952.6,
+      789.8,
+      1462.7,
+      1202.9
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.706,
+    "timestamp_seconds": 5.0,
+    "source_frame_index": 150,
+    "xyxy": [
+      362.2,
+      912.7,
+      910.7,
+      1425.7
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.562,
+    "timestamp_seconds": 5.0,
+    "source_frame_index": 150,
+    "xyxy": [
+      9.2,
+      1339.2,
+      429.8,
+      2493.4
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.511,
+    "timestamp_seconds": 5.0,
+    "source_frame_index": 150,
+    "xyxy": [
+      482.1,
+      2407.5,
+      2154.7,
+      3349.1
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.927,
+    "timestamp_seconds": 5.5,
+    "source_frame_index": 165,
+    "xyxy": [
+      708.7,
+      262.7,
+      2157.5,
+      981.2
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.876,
+    "timestamp_seconds": 5.5,
+    "source_frame_index": 165,
+    "xyxy": [
+      720.1,
+      824.2,
+      1231.8,
+      1228.5
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.837,
+    "timestamp_seconds": 5.5,
+    "source_frame_index": 165,
+    "xyxy": [
+      230.3,
+      2385.3,
+      2111.8,
+      3374.4
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.365,
+    "timestamp_seconds": 5.5,
+    "source_frame_index": 165,
+    "xyxy": [
+      131.3,
+      960.2,
+      673.7,
+      1464.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.952,
+    "timestamp_seconds": 6.0,
+    "source_frame_index": 180,
+    "xyxy": [
+      546.7,
+      233.8,
+      2155.5,
+      947.4
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.848,
+    "timestamp_seconds": 6.0,
+    "source_frame_index": 180,
+    "xyxy": [
+      539.5,
+      791.8,
+      1074.4,
+      1208.1
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.524,
+    "timestamp_seconds": 6.0,
+    "source_frame_index": 180,
+    "xyxy": [
+      48.1,
+      2378.2,
+      1996.1,
+      3458.4
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.941,
+    "timestamp_seconds": 6.5,
+    "source_frame_index": 195,
+    "xyxy": [
+      357.4,
+      700.5,
+      919.5,
+      1133.5
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.934,
+    "timestamp_seconds": 6.5,
+    "source_frame_index": 195,
+    "xyxy": [
+      370.2,
+      131.1,
+      2157.9,
+      859.4
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.372,
+    "timestamp_seconds": 6.5,
+    "source_frame_index": 195,
+    "xyxy": [
+      4.8,
+      2310.0,
+      1911.2,
+      3491.0
+    ]
+  },
+  {
+    "label": "laptop",
+    "confidence": 0.276,
+    "timestamp_seconds": 6.5,
+    "source_frame_index": 195,
+    "xyxy": [
+      8.0,
+      2306.8,
+      1900.2,
+      3498.9
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.94,
+    "timestamp_seconds": 7.0,
+    "source_frame_index": 210,
+    "xyxy": [
+      135.7,
+      147.9,
+      2157.3,
+      832.4
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.94,
+    "timestamp_seconds": 7.0,
+    "source_frame_index": 210,
+    "xyxy": [
+      89.3,
+      702.3,
+      689.3,
+      1132.2
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.864,
+    "timestamp_seconds": 7.0,
+    "source_frame_index": 210,
+    "xyxy": [
+      10.1,
+      2263.2,
+      1670.8,
+      3453.2
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.927,
+    "timestamp_seconds": 7.5,
+    "source_frame_index": 225,
+    "xyxy": [
+      15.2,
+      177.4,
+      2160.0,
+      811.9
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.786,
+    "timestamp_seconds": 7.5,
+    "source_frame_index": 225,
+    "xyxy": [
+      1.6,
+      734.4,
+      409.2,
+      1162.0
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.672,
+    "timestamp_seconds": 7.5,
+    "source_frame_index": 225,
+    "xyxy": [
+      5.7,
+      2257.3,
+      1359.3,
+      3425.3
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.935,
+    "timestamp_seconds": 8.0,
+    "source_frame_index": 240,
+    "xyxy": [
+      13.6,
+      183.1,
+      2159.6,
+      793.7
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.875,
+    "timestamp_seconds": 8.0,
+    "source_frame_index": 240,
+    "xyxy": [
+      7.7,
+      2263.7,
+      1167.3,
+      3419.2
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.343,
+    "timestamp_seconds": 8.0,
+    "source_frame_index": 240,
+    "xyxy": [
+      3.2,
+      767.7,
+      214.7,
+      1318.8
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.926,
+    "timestamp_seconds": 8.5,
+    "source_frame_index": 255,
+    "xyxy": [
+      12.5,
+      164.5,
+      2158.4,
+      784.3
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.858,
+    "timestamp_seconds": 8.5,
+    "source_frame_index": 255,
+    "xyxy": [
+      6.2,
+      2254.4,
+      1066.9,
+      3399.9
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.917,
+    "timestamp_seconds": 9.0,
+    "source_frame_index": 270,
+    "xyxy": [
+      9.3,
+      19.7,
+      2160.0,
+      743.5
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.881,
+    "timestamp_seconds": 9.0,
+    "source_frame_index": 270,
+    "xyxy": [
+      7.4,
+      2247.9,
+      985.7,
+      3399.7
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.918,
+    "timestamp_seconds": 9.5,
+    "source_frame_index": 285,
+    "xyxy": [
+      8.4,
+      34.7,
+      2160.0,
+      737.8
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.86,
+    "timestamp_seconds": 9.5,
+    "source_frame_index": 285,
+    "xyxy": [
+      5.7,
+      2243.3,
+      850.1,
+      3370.9
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.924,
+    "timestamp_seconds": 10.0,
+    "source_frame_index": 300,
+    "xyxy": [
+      11.5,
+      10.8,
+      2160.0,
+      743.3
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.887,
+    "timestamp_seconds": 10.0,
+    "source_frame_index": 300,
+    "xyxy": [
+      4.8,
+      2243.2,
+      767.0,
+      3364.4
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.924,
+    "timestamp_seconds": 10.5,
+    "source_frame_index": 315,
+    "xyxy": [
+      9.9,
+      1.9,
+      2160.0,
+      724.5
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.887,
+    "timestamp_seconds": 10.5,
+    "source_frame_index": 315,
+    "xyxy": [
+      5.3,
+      2238.5,
+      679.2,
+      3336.4
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.922,
+    "timestamp_seconds": 11.0,
+    "source_frame_index": 330,
+    "xyxy": [
+      4.9,
+      0.8,
+      2160.0,
+      706.5
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.812,
+    "timestamp_seconds": 11.0,
+    "source_frame_index": 330,
+    "xyxy": [
+      5.7,
+      2239.4,
+      586.3,
+      3319.5
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.925,
+    "timestamp_seconds": 11.5,
+    "source_frame_index": 345,
+    "xyxy": [
+      5.2,
+      0.9,
+      2160.0,
+      674.4
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.816,
+    "timestamp_seconds": 11.5,
+    "source_frame_index": 345,
+    "xyxy": [
+      7.4,
+      2225.3,
+      497.8,
+      3280.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.926,
+    "timestamp_seconds": 12.0,
+    "source_frame_index": 360,
+    "xyxy": [
+      5.8,
+      0.7,
+      2144.7,
+      622.2
+    ]
+  },
+  {
+    "label": "cell phone",
+    "confidence": 0.427,
+    "timestamp_seconds": 12.0,
+    "source_frame_index": 360,
+    "xyxy": [
+      6.4,
+      2219.4,
+      350.0,
+      3212.5
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.924,
+    "timestamp_seconds": 12.5,
+    "source_frame_index": 375,
+    "xyxy": [
+      9.5,
+      0.8,
+      2010.4,
+      568.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.873,
+    "timestamp_seconds": 13.0,
+    "source_frame_index": 390,
+    "xyxy": [
+      10.7,
+      1.2,
+      1852.5,
+      523.8
+    ]
+  },
+  {
+    "label": "baseball bat",
+    "confidence": 0.49,
+    "timestamp_seconds": 13.0,
+    "source_frame_index": 390,
+    "xyxy": [
+      1154.8,
+      892.6,
+      2147.9,
+      2147.2
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.87,
+    "timestamp_seconds": 13.5,
+    "source_frame_index": 405,
+    "xyxy": [
+      10.6,
+      1.9,
+      1763.0,
+      475.8
+    ]
+  },
+  {
+    "label": "baseball bat",
+    "confidence": 0.579,
+    "timestamp_seconds": 13.5,
+    "source_frame_index": 405,
+    "xyxy": [
+      1064.5,
+      854.8,
+      2051.9,
+      2104.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.902,
+    "timestamp_seconds": 14.0,
+    "source_frame_index": 420,
+    "xyxy": [
+      10.6,
+      1.7,
+      1668.5,
+      392.9
+    ]
+  },
+  {
+    "label": "baseball bat",
+    "confidence": 0.4,
+    "timestamp_seconds": 14.0,
+    "source_frame_index": 420,
+    "xyxy": [
+      973.6,
+      780.3,
+      1986.0,
+      2048.1
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.678,
+    "timestamp_seconds": 14.5,
+    "source_frame_index": 435,
+    "xyxy": [
+      9.2,
+      1.1,
+      1579.0,
+      327.1
+    ]
+  },
+  {
+    "label": "baseball bat",
+    "confidence": 0.419,
+    "timestamp_seconds": 14.5,
+    "source_frame_index": 435,
+    "xyxy": [
+      861.2,
+      732.4,
+      1873.0,
+      2006.3
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.687,
+    "timestamp_seconds": 15.0,
+    "source_frame_index": 450,
+    "xyxy": [
+      7.8,
+      0.9,
+      1495.0,
+      303.6
+    ]
+  }
+]

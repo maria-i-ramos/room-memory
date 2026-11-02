@@ -1,0 +1,710 @@
+[
+  {
+    "label": "keyboard",
+    "confidence": 0.948,
+    "timestamp_seconds": 0.0,
+    "source_frame_index": 0,
+    "xyxy": [
+      542.4,
+      217.2,
+      2157.9,
+      1052.8
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.366,
+    "timestamp_seconds": 0.0,
+    "source_frame_index": 0,
+    "xyxy": [
+      314.2,
+      1496.1,
+      932.1,
+      2023.3
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.943,
+    "timestamp_seconds": 0.5,
+    "source_frame_index": 15,
+    "xyxy": [
+      544.5,
+      242.4,
+      2158.0,
+      1082.7
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.295,
+    "timestamp_seconds": 0.5,
+    "source_frame_index": 15,
+    "xyxy": [
+      311.2,
+      1513.8,
+      925.9,
+      2053.8
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.943,
+    "timestamp_seconds": 1.0,
+    "source_frame_index": 30,
+    "xyxy": [
+      509.2,
+      295.3,
+      2158.8,
+      1114.8
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.482,
+    "timestamp_seconds": 1.0,
+    "source_frame_index": 30,
+    "xyxy": [
+      274.8,
+      1525.9,
+      865.7,
+      2043.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.951,
+    "timestamp_seconds": 1.5,
+    "source_frame_index": 45,
+    "xyxy": [
+      439.8,
+      331.0,
+      2156.5,
+      1137.1
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.272,
+    "timestamp_seconds": 1.5,
+    "source_frame_index": 45,
+    "xyxy": [
+      191.2,
+      1532.7,
+      783.1,
+      2043.2
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.942,
+    "timestamp_seconds": 2.0,
+    "source_frame_index": 60,
+    "xyxy": [
+      328.1,
+      361.1,
+      2156.6,
+      1157.9
+    ]
+  },
+  {
+    "label": "tv",
+    "confidence": 0.642,
+    "timestamp_seconds": 2.0,
+    "source_frame_index": 60,
+    "xyxy": [
+      807.7,
+      1.3,
+      2153.0,
+      185.1
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.51,
+    "timestamp_seconds": 2.0,
+    "source_frame_index": 60,
+    "xyxy": [
+      80.9,
+      1538.7,
+      665.6,
+      2046.0
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.942,
+    "timestamp_seconds": 2.5,
+    "source_frame_index": 75,
+    "xyxy": [
+      188.3,
+      397.0,
+      2160.0,
+      1156.5
+    ]
+  },
+  {
+    "label": "tv",
+    "confidence": 0.426,
+    "timestamp_seconds": 2.5,
+    "source_frame_index": 75,
+    "xyxy": [
+      560.7,
+      1.0,
+      2157.0,
+      220.5
+    ]
+  },
+  {
+    "label": "tv",
+    "confidence": 0.347,
+    "timestamp_seconds": 2.5,
+    "source_frame_index": 75,
+    "xyxy": [
+      87.3,
+      1.4,
+      2159.5,
+      190.2
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.935,
+    "timestamp_seconds": 3.0,
+    "source_frame_index": 90,
+    "xyxy": [
+      12.6,
+      405.4,
+      2160.0,
+      1145.7
+    ]
+  },
+  {
+    "label": "tv",
+    "confidence": 0.478,
+    "timestamp_seconds": 3.0,
+    "source_frame_index": 90,
+    "xyxy": [
+      18.1,
+      1.7,
+      2157.9,
+      195.3
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.259,
+    "timestamp_seconds": 3.0,
+    "source_frame_index": 90,
+    "xyxy": [
+      316.6,
+      1645.8,
+      1037.7,
+      2238.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.94,
+    "timestamp_seconds": 3.5,
+    "source_frame_index": 105,
+    "xyxy": [
+      12.7,
+      395.6,
+      2158.3,
+      1114.6
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.746,
+    "timestamp_seconds": 3.5,
+    "source_frame_index": 105,
+    "xyxy": [
+      0.6,
+      1635.9,
+      854.0,
+      2246.5
+    ]
+  },
+  {
+    "label": "tv",
+    "confidence": 0.342,
+    "timestamp_seconds": 3.5,
+    "source_frame_index": 105,
+    "xyxy": [
+      33.9,
+      1.2,
+      2155.4,
+      196.8
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.928,
+    "timestamp_seconds": 4.0,
+    "source_frame_index": 120,
+    "xyxy": [
+      13.9,
+      377.9,
+      2155.8,
+      1083.0
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.878,
+    "timestamp_seconds": 4.0,
+    "source_frame_index": 120,
+    "xyxy": [
+      0.0,
+      1622.9,
+      697.4,
+      2243.5
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.923,
+    "timestamp_seconds": 4.5,
+    "source_frame_index": 135,
+    "xyxy": [
+      15.2,
+      374.5,
+      2160.0,
+      1041.1
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.914,
+    "timestamp_seconds": 4.5,
+    "source_frame_index": 135,
+    "xyxy": [
+      4.8,
+      1618.2,
+      575.6,
+      2262.1
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.928,
+    "timestamp_seconds": 5.0,
+    "source_frame_index": 150,
+    "xyxy": [
+      16.2,
+      372.2,
+      2160.0,
+      1022.4
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.878,
+    "timestamp_seconds": 5.0,
+    "source_frame_index": 150,
+    "xyxy": [
+      9.7,
+      1621.3,
+      472.5,
+      2267.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.927,
+    "timestamp_seconds": 5.5,
+    "source_frame_index": 165,
+    "xyxy": [
+      14.6,
+      374.0,
+      2159.4,
+      1005.4
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.781,
+    "timestamp_seconds": 5.5,
+    "source_frame_index": 165,
+    "xyxy": [
+      8.6,
+      1627.9,
+      393.6,
+      2281.2
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.919,
+    "timestamp_seconds": 6.0,
+    "source_frame_index": 180,
+    "xyxy": [
+      15.7,
+      362.4,
+      2160.0,
+      983.1
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.901,
+    "timestamp_seconds": 6.5,
+    "source_frame_index": 195,
+    "xyxy": [
+      12.7,
+      355.7,
+      2160.0,
+      960.1
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.885,
+    "timestamp_seconds": 7.0,
+    "source_frame_index": 210,
+    "xyxy": [
+      9.1,
+      314.7,
+      2118.8,
+      950.7
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.902,
+    "timestamp_seconds": 7.5,
+    "source_frame_index": 225,
+    "xyxy": [
+      8.5,
+      309.6,
+      2000.8,
+      940.4
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.923,
+    "timestamp_seconds": 8.0,
+    "source_frame_index": 240,
+    "xyxy": [
+      9.2,
+      284.4,
+      1855.9,
+      939.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.939,
+    "timestamp_seconds": 8.5,
+    "source_frame_index": 255,
+    "xyxy": [
+      7.8,
+      272.9,
+      1686.6,
+      937.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.926,
+    "timestamp_seconds": 9.0,
+    "source_frame_index": 270,
+    "xyxy": [
+      7.4,
+      263.0,
+      1479.7,
+      945.0
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.937,
+    "timestamp_seconds": 9.5,
+    "source_frame_index": 285,
+    "xyxy": [
+      6.7,
+      218.9,
+      1288.8,
+      921.7
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.444,
+    "timestamp_seconds": 9.5,
+    "source_frame_index": 285,
+    "xyxy": [
+      1870.9,
+      875.7,
+      2157.1,
+      1627.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.921,
+    "timestamp_seconds": 10.0,
+    "source_frame_index": 300,
+    "xyxy": [
+      5.5,
+      214.0,
+      1140.6,
+      917.1
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.907,
+    "timestamp_seconds": 10.0,
+    "source_frame_index": 300,
+    "xyxy": [
+      1714.1,
+      902.7,
+      2154.6,
+      1576.1
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.934,
+    "timestamp_seconds": 10.5,
+    "source_frame_index": 315,
+    "xyxy": [
+      1582.4,
+      881.5,
+      2108.0,
+      1538.2
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.921,
+    "timestamp_seconds": 10.5,
+    "source_frame_index": 315,
+    "xyxy": [
+      5.0,
+      213.6,
+      1008.5,
+      910.2
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.952,
+    "timestamp_seconds": 11.0,
+    "source_frame_index": 330,
+    "xyxy": [
+      1437.4,
+      862.9,
+      1954.1,
+      1521.4
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.917,
+    "timestamp_seconds": 11.0,
+    "source_frame_index": 330,
+    "xyxy": [
+      2.9,
+      206.4,
+      872.9,
+      883.6
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.947,
+    "timestamp_seconds": 11.5,
+    "source_frame_index": 345,
+    "xyxy": [
+      1311.1,
+      849.6,
+      1822.1,
+      1479.6
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.896,
+    "timestamp_seconds": 11.5,
+    "source_frame_index": 345,
+    "xyxy": [
+      2.4,
+      208.3,
+      746.4,
+      873.9
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.951,
+    "timestamp_seconds": 12.0,
+    "source_frame_index": 360,
+    "xyxy": [
+      1174.9,
+      849.7,
+      1677.6,
+      1471.8
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.822,
+    "timestamp_seconds": 12.0,
+    "source_frame_index": 360,
+    "xyxy": [
+      2.8,
+      221.5,
+      618.5,
+      861.8
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.952,
+    "timestamp_seconds": 12.5,
+    "source_frame_index": 375,
+    "xyxy": [
+      1087.5,
+      857.1,
+      1590.6,
+      1482.3
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.754,
+    "timestamp_seconds": 12.5,
+    "source_frame_index": 375,
+    "xyxy": [
+      3.2,
+      219.0,
+      534.0,
+      871.3
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.951,
+    "timestamp_seconds": 13.0,
+    "source_frame_index": 390,
+    "xyxy": [
+      1072.8,
+      856.1,
+      1573.9,
+      1480.3
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.767,
+    "timestamp_seconds": 13.0,
+    "source_frame_index": 390,
+    "xyxy": [
+      3.1,
+      218.3,
+      518.1,
+      871.0
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.957,
+    "timestamp_seconds": 13.5,
+    "source_frame_index": 405,
+    "xyxy": [
+      1085.0,
+      850.7,
+      1586.3,
+      1467.2
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.766,
+    "timestamp_seconds": 13.5,
+    "source_frame_index": 405,
+    "xyxy": [
+      3.0,
+      205.3,
+      528.1,
+      853.6
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.96,
+    "timestamp_seconds": 14.0,
+    "source_frame_index": 420,
+    "xyxy": [
+      1094.6,
+      849.9,
+      1597.1,
+      1468.4
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.771,
+    "timestamp_seconds": 14.0,
+    "source_frame_index": 420,
+    "xyxy": [
+      3.1,
+      203.8,
+      541.7,
+      856.0
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.951,
+    "timestamp_seconds": 14.5,
+    "source_frame_index": 435,
+    "xyxy": [
+      1113.5,
+      839.8,
+      1615.9,
+      1463.9
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.502,
+    "timestamp_seconds": 14.5,
+    "source_frame_index": 435,
+    "xyxy": [
+      3.6,
+      104.1,
+      560.9,
+      848.5
+    ]
+  },
+  {
+    "label": "mouse",
+    "confidence": 0.952,
+    "timestamp_seconds": 15.0,
+    "source_frame_index": 450,
+    "xyxy": [
+      1127.1,
+      834.6,
+      1626.2,
+      1454.5
+    ]
+  },
+  {
+    "label": "keyboard",
+    "confidence": 0.835,
+    "timestamp_seconds": 15.0,
+    "source_frame_index": 450,
+    "xyxy": [
+      3.8,
+      199.2,
+      578.5,
+      844.9
+    ]
+  }
+]

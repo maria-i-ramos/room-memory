@@ -1,0 +1,17 @@
+{
+  "frames_processed": 32,
+  "detections": 28,
+  "labels_seen": [
+    "book",
+    "cell phone",
+    "clock",
+    "cup",
+    "mouse",
+    "sink",
+    "spoon",
+    "toilet",
+    "toothbrush"
+  ],
+  "processing_seconds": 13.46,
+  "model": "yolo11n.pt"
+}

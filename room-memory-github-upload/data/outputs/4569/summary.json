@@ -1,0 +1,14 @@
+{
+  "frames_processed": 33,
+  "detections": 77,
+  "labels_seen": [
+    "book",
+    "keyboard",
+    "laptop",
+    "mouse",
+    "remote",
+    "tv"
+  ],
+  "processing_seconds": 6.25,
+  "model": "yolo11n.pt"
+}

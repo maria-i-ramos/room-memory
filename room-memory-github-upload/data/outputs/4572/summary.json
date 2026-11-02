@@ -1,0 +1,13 @@
+{
+  "frames_processed": 32,
+  "detections": 37,
+  "labels_seen": [
+    "baseball bat",
+    "book",
+    "clock",
+    "keyboard",
+    "laptop"
+  ],
+  "processing_seconds": 6.03,
+  "model": "yolo11n.pt"
+}

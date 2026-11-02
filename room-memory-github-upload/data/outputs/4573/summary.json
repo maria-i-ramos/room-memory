@@ -1,0 +1,14 @@
+{
+  "frames_processed": 31,
+  "detections": 74,
+  "labels_seen": [
+    "baseball bat",
+    "cell phone",
+    "keyboard",
+    "laptop",
+    "mouse",
+    "surfboard"
+  ],
+  "processing_seconds": 6.51,
+  "model": "yolo11n.pt"
+}

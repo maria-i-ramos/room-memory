@@ -1,0 +1,11 @@
+{
+  "frames_processed": 31,
+  "detections": 59,
+  "labels_seen": [
+    "keyboard",
+    "mouse",
+    "tv"
+  ],
+  "processing_seconds": 6.18,
+  "model": "yolo11n.pt"
+}
