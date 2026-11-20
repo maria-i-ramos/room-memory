@@ -1,0 +1,137 @@
+video,object,found,surface,location,nearby_objects,first_seen_seconds,last_seen_seconds,confidence
+IMG_0040 (1).mp4,orange,True,shelving unit,on the middle shelf of the white shelving unit,"storage bin, shelving unit",0,51,high
+IMG_0040 (1).mp4,tissue box,True,shelving unit,on the lower shelf of the white shelving unit,"shelving unit, desk",0,51,high
+IMG_0040 (1).mp4,paper bag,True,desk,on the desk below the white shelving unit,"shelving unit, laptop, desk lamp",17,51,high
+IMG_0040 (1).mp4,laptop,True,desk,on the desk behind the paper bag,"paper bag, desk",43,51,medium
+IMG_0040 (1).mp4,desk lamp,True,desk,on the right side of the desk,"drying rack, wall posters",43,51,high
+IMG_0040 (1).mp4,office chair,True,floor,in front of the desk,"drying rack, desk",37,52,high
+IMG_0040 (1).mp4,drying rack,True,floor,standing on the floor with clothes hanging from it,"office chair, desk lamp",41,51,high
+IMG_0787.mp4,orange folder,True,basket,inside a woven basket on the floor next to the mirrored closet,"woven basket, mirrored closet",0,1,high
+IMG_0787.mp4,water bottle,True,window sill,standing on the window sill near the yoga mat,"window sill, yoga mat",3,3,high
+IMG_0787.mp4,yoga mat,True,floor,rolled up on the floor by the window,"window, bed",3,4,high
+IMG_0787.mp4,white sneaker,True,shoe box,on top of a box sitting on a black chair near the desk,"chair, desk",4,5,high
+IMG_0787.mp4,guitar case,True,floor,standing on the floor leaning against the desk,"desk, paper towels",5,5,high
+IMG_2133.MOV,glasses,True,desk,on the desk mat to the left of the laptop stand,"laptop stand, lamp",0,1,high
+IMG_2133.MOV,laptop stand,True,desk,on the desk mat in front of the monitor,"glasses, digital camera, pill bottle",0,3,high
+IMG_2133.MOV,pill bottle,True,desk,on the desk mat next to the wallet,"wallet, digital camera",1,3,high
+IMG_2133.MOV,wallet,True,desk,on the desk mat between the pill bottle and water bottle,"pill bottle, water bottle, digital camera",2,3,high
+IMG_2133.MOV,digital camera,True,desk,on the desk mat beside the laptop stand,"laptop stand, wallet, remote control",2,3,high
+IMG_2133.MOV,water bottle,True,desk,on the desk mat next to the remote control,"remote control, wallet",2,3,high
+IMG_2133.MOV,remote control,True,desk,on the desk mat beside the water bottle,"water bottle, digital camera",3,3,high
+IMG_2134.MOV,remote control,True,bed,on the bed next to the glasses,"glasses, blanket",0,1,high
+IMG_2134.MOV,glasses,True,bed,on the bed between the remote control and blanket,"remote control, blanket",0,1,high
+IMG_2134.MOV,air purifier,True,floor,on the floor next to the white dresser,dresser,2,3,high
+IMG_2134.MOV,laptop stand,True,desk,on the desk beside the desk organizer,"camera, pill bottle, desk organizer",3,6,high
+IMG_2134.MOV,pill bottle,True,desk,on the desk next to the laptop stand and wallet,"wallet, laptop stand",5,6,high
+IMG_2134.MOV,wallet,True,desk,on the desk behind the camera,"camera, pill bottle, water bottle",5,6,high
+IMG_2134.MOV,camera,True,desk,on the desk in front of the wallet,"laptop stand, wallet",5,6,high
+IMG_2134.MOV,water bottle,True,desk,on the desk next to the small plant,"wallet, plant",6,6,high
+IMG_2135.MOV,remote control,True,bed,on the brown bed sheet near the pillows,"glasses, pillows",0,1,high
+IMG_2135.MOV,glasses,True,bed,on the brown bed sheet,"remote control, keys",0,1,high
+IMG_2135.MOV,keys,True,bed,on the brown bed sheet near the foot of the bed,glasses,1,2,high
+IMG_2135.MOV,water bottle,True,dresser,on the right edge of the white dresser,jewelry stand,4,5,high
+IMG_2135.MOV,desk lamp,True,desk,on the left side of the black desk,"monitor, laptop stand",5,6,high
+IMG_2135.MOV,laptop stand,True,desk,on the desk surface in front of the monitor,"monitor, camera",6,8,high
+IMG_2135.MOV,camera,True,desk,on the desk mat in front of the laptop stand,"wallet, laptop stand",7,8,high
+IMG_2135.MOV,wallet,True,desk,on the desk mat next to the pill bottle,"pill bottle, camera",7,8,high
+IMG_2135.MOV,pill bottle,True,desk,on the desk mat near the monitor base,"wallet, monitor",7,8,high
+IMG_2136.MOV,remote control,True,bed,on the bed next to the brown water bottle,"water bottle, pillow",0,1,high
+IMG_2136.MOV,water bottle,True,bed,on the bed between the remote and the camera,"remote control, camera",0,1,high
+IMG_2136.MOV,camera,True,bed,on the bed near the edge,water bottle,1,2,high
+IMG_2136.MOV,lanyard with keys,True,dresser,on top of the white dresser,"picture frame, eyeglasses",4,5,high
+IMG_2136.MOV,eyeglasses,True,dresser,on the white dresser in front of the jewelry stand,"jewelry stand, lanyard with keys",5,6,high
+IMG_2136.MOV,laptop stand,True,desk,on the desk,pill bottle,7,8,high
+IMG_2136.MOV,pill bottle,True,desk,on the desk next to the laptop stand,laptop stand,8,8,high
+IMG_2137.MOV,water bottle,True,bed,lying on the brown bed sheet near the pillows,"camera, teddy bear",0,1,high
+IMG_2137.MOV,camera,True,bed,lying on the brown bed sheet,water bottle,0,1,high
+IMG_2137.MOV,remote control,True,rug,lying on the patterned white rug on the floor,wallet,2,4,high
+IMG_2137.MOV,wallet,True,rug,lying on the patterned white rug near the white dresser,remote control,3,5,high
+IMG_2137.MOV,eyeglasses,True,dresser,resting on top of the white dresser,jewelry stand,6,7,high
+IMG_2137.MOV,pill bottle,True,desk,standing on top of the dark desk surface,laptop stand,9,9,high
+IMG_2138.MOV,wallet,True,bed,on the brown duvet on the bed,"water bottle, pillows",0,1,high
+IMG_2138.MOV,water bottle,True,bed,on the bed in the center,"wallet, stuffed animals",0,1,high
+IMG_2138.MOV,remote control,True,dresser,on top of the white dresser,"jewelry stand, framed photo",3,4,high
+IMG_2138.MOV,camera,True,dresser,on top of the white dresser near the side,"heart-shaped box, jewelry stand",3,4,high
+IMG_2138.MOV,laptop stand,True,desk,on top of the black desk,"glasses, pill bottle",5,7,high
+IMG_2138.MOV,glasses,True,desk,on the desk mat on the desk,"keys, pill bottle, laptop stand",5,8,high
+IMG_2138.MOV,pill bottle,True,desk,on the desk mat behind the glasses,"glasses, laptop stand",5,7,high
+IMG_2138.MOV,keys,True,desk,attached to a lanyard on the desk mat,"glasses, lanyard",7,8,high
+IMG_4203.mp4,remote control,True,table,on the left side of the table,glasses,0,5,high
+IMG_4203.mp4,glasses,True,table,in the middle of the table,"remote control, keychain",1,12,high
+IMG_4203.mp4,keychain,True,table,on the right side of the table,glasses,11,15,high
+IMG_4206.mp4,water bottle,True,white cabinet,on the left side of the white cabinet next to the blue notebook,"blue notebook, television",0,7,high
+IMG_4206.mp4,blue notebook,True,white cabinet,on the white cabinet in front of the television,"water bottle, keychain, television",0,14,high
+IMG_4206.mp4,keychain,True,white cabinet,on the right side of the white cabinet,blue notebook,11,14,high
+IMG_4207.mp4,water bottle,True,desk,on the white desk to the left of the sunglasses,sunglasses,0,5,high
+IMG_4207.mp4,sunglasses,True,desk,on the white desk between the water bottle and the wired earphones,"water bottle, wired earphones",0,13,high
+IMG_4207.mp4,wired earphones,True,desk,on the white desk to the right of the sunglasses,sunglasses,3,15,high
+IMG_4569.mp4,laptop,True,desk,on the left side of the desk,"keyboard, stylus",0,11,high
+IMG_4569.mp4,keyboard,True,desk,on the upper portion of the desk,"laptop, computer mouse, stylus",3,15,high
+IMG_4569.mp4,stylus,True,desk,in the middle of the desk between the blue laptop and tablet,"laptop, tablet, keyboard",9,15,high
+IMG_4569.mp4,tablet,True,desk,on the right side of the desk,"stylus, computer mouse",11,15,high
+IMG_4569.mp4,computer mouse,True,desk,on the desk near the keyboard and tablet,"keyboard, tablet",12,15,high
+IMG_4570.mp4,laptop,True,desk,on the left side of the desk,"keyboard, keychain",0,7,high
+IMG_4570.mp4,keyboard,True,desk,along the upper edge of the desk,"laptop, computer mouse",1,15,high
+IMG_4570.mp4,keychain,True,desk,on the desk between the laptop and stylus,"laptop, stylus",6,13,high
+IMG_4570.mp4,stylus,True,desk,on the desk below the computer mouse,"keychain, computer mouse",10,15,high
+IMG_4570.mp4,computer mouse,True,desk,on the desk above the stylus,"stylus, keyboard",10,15,high
+IMG_4571.mp4,sunglasses,True,desk,on the desk to the left of the keychain,"keyboard, keychain",0,6,high
+IMG_4571.mp4,keychain,True,desk,on the desk between the sunglasses and stylus,"sunglasses, stylus, keyboard",1,10,high
+IMG_4571.mp4,stylus,True,desk,on the desk to the left of the computer mouse,"keychain, computer mouse, keyboard",7,14,high
+IMG_4571.mp4,computer mouse,True,desk,on the desk near the keyboard and stylus,"stylus, keyboard",9,14,high
+IMG_4571.mp4,keyboard,True,desk,on the desk near the computer monitor,"sunglasses, keychain, computer mouse",0,14,high
+IMG_4572.mp4,keyboard,True,desk,at the top edge of the desk,"gift card, keychain, stylus",0,15,high
+IMG_4572.mp4,gift card,True,desk,on the desk in front of the keyboard,keyboard,0,6,high
+IMG_4572.mp4,keychain,True,desk,on the desk between the gift card and the stylus,"stylus, keyboard",5,14,high
+IMG_4572.mp4,stylus,True,desk,on the desk to the right of the keychain,"keychain, keyboard",9,15,high
+IMG_4573.mp4,laptop,True,desk,on the left side of the desk,"sunglasses, phone",0,4,high
+IMG_4573.mp4,sunglasses,True,desk,on the desk in front of the keyboard,"laptop, card, keyboard",2,6,high
+IMG_4573.mp4,card,True,desk,on the desk near the sunglasses and phone,"sunglasses, phone, keyboard",3,8,high
+IMG_4573.mp4,phone,True,desk,on the desk in front of the card and keychain,"card, keychain",2,12,high
+IMG_4573.mp4,keyboard,True,desk,on the back section of the desk,"sunglasses, keychain, stylus",3,13,high
+IMG_4573.mp4,keychain,True,desk,on the desk beside the phone and stylus,"phone, stylus, keyboard",6,13,high
+IMG_4573.mp4,stylus,True,desk,on the right side of the desk next to the keychain,"keychain, keyboard",9,14,high
+IMG_4574.mp4,sunglasses,True,desk,on the desk near the gift card,gift card,0,5,high
+IMG_4574.mp4,gift card,True,desk,on the desk between the sunglasses and keychain,"sunglasses, keychain",0,6,high
+IMG_4574.mp4,keychain,True,desk,on the desk above the white charger block,"gift card, charger block",5,10,high
+IMG_4574.mp4,charger block,True,desk,on the desk connected to the white charging cable,"keychain, charging cable",6,10,high
+IMG_4574.mp4,charging cable,True,desk,coiled on the desk beside the stylus,"charger block, stylus, computer mouse",7,15,high
+IMG_4574.mp4,stylus,True,desk,on the desk above the coiled charging cable,"charging cable, computer mouse",9,13,high
+IMG_4574.mp4,computer mouse,True,desk,on the desk near the charging cable,"charging cable, stylus",12,15,high
+IMG_4866 2.mp4,laptop,True,dining table,on the dark wooden dining table,chair,0,3,high
+IMG_4866 2.mp4,shoes,True,floor,on the floor underneath the dining table,"dining table, chair",2,3,high
+IMG_4866 2.mp4,handbag,True,chair,on the seat of a white chair,jacket,11,14,high
+IMG_4866 2.mp4,jacket,True,chair,draped over the back of a white chair,handbag,11,14,high
+IMG_4867 2.mp4,water bottle,True,couch,on the couch next to the grey ribbed pillow,grey pillow,0,4,high
+IMG_4867 2.mp4,charger cable,True,couch,on the couch in front of the small grey case,"small grey case, black tote bag",4,16,high
+IMG_4867 2.mp4,small grey case,True,couch,on the couch next to the black tote bag,"black tote bag, charger cable",5,14,high
+IMG_4867 2.mp4,black tote bag,True,couch,on the couch behind the small grey case,small grey case,5,15,high
+IMG_4867 2.mp4,slippers,True,floor,on the floor between the couch and the glass coffee table,"glass coffee table, couch",15,16,high
+IMG_4869 2.mp4,laptop,True,couch,on the grey couch in front of the viewer,couch,0,3,high
+IMG_4869 2.mp4,candle,True,media stand,on the white media stand under the television,"television, speaker",0,4,high
+IMG_4869 2.mp4,speaker,True,side table,on the top surface of the black wooden side table,"side table, magazines",2,8,high
+IMG_4869 2.mp4,coaster,True,coffee table,on top of the glass coffee table,coffee table,8,12,high
+IMG_4869 2.mp4,coffee table,True,floor,in the center of the living room floor,coaster,5,12,high
+IMG_4887.mp4,book,True,nightstand,on top of the white nightstand,"yellow drink cup, photo frame",0,1,high
+IMG_4887.mp4,yellow drink cup,True,nightstand,on top of the white nightstand next to the book,"book, photo frame",0,1,high
+IMG_4887.mp4,yoga mat,True,floor,standing on the floor next to the guitar case and nightstand,"guitar case, nightstand",1,2,high
+IMG_4887.mp4,guitar case,True,floor,resting on the floor beside the nightstand,"yoga mat, nightstand",1,2,high
+IMG_4887.mp4,suitcase,True,floor,on the floor near the edge of the rug,rug,3,4,high
+IMG_4887.mp4,slippers,True,rug,on the rug in front of the white dresser,dresser,3,5,high
+IMG_4887.mp4,tumbler,True,dresser,on top of the white dresser beside the hair dryer brush,"hair dryer brush, flat iron",6,8,high
+IMG_4887.mp4,hair dryer brush,True,dresser,on top of the white dresser next to the flat iron,"flat iron, tumbler",7,8,high
+IMG_4887.mp4,flat iron,True,dresser,on top of the white dresser on a protective mat,"hair dryer brush, diffuser",7,8,high
+IMG_4887.mp4,diffuser,True,dresser,on the left side of the top of the white dresser,"flat iron, card",7,8,high
+IMG_4889_from_MP4.mp4,pizza box,True,desk,on the desk near the computer monitor and laptop,"laptop, computer monitor",0,1,high
+IMG_4889_from_MP4.mp4,laptop,True,desk,on the desk in front of the computer monitor,"pizza box, computer monitor, earphones",1,3,high
+IMG_4889_from_MP4.mp4,earphones,True,desk,on the desk in front of the laptop and monitor,"laptop, computer monitor",2,5,high
+IMG_4889_from_MP4.mp4,water bottle,True,desk,on the desk next to the computer monitor and iced drink,"iced drink cup, computer monitor",3,4,high
+IMG_4889_from_MP4.mp4,iced drink cup,True,desk,on the desk beside the black water bottle,"water bottle, earphones",3,4,high
+IMG_4889_from_MP4.mp4,AirPods case,True,desk,on the desk next to the pen and keyboard,"pen, keyboard, iced drink cup",4,6,high
+IMG_4889_from_MP4.mp4,pen,True,desk,on the desk next to the paper,"paper, AirPods case, calculator",4,6,high
+IMG_4889_from_MP4.mp4,calculator,True,desk,on the desk near the paper and computer monitor,"paper, computer monitor",5,6,high
+IMG_4889_from_MP4.mp4,phone,True,,held in a person's hand over the desk,"paper, desk",5,6,high
+IMG_6256 (1).mp4,laptop,True,desk,on the white desk in front of the user,"coconut water carton, secondary laptop",0,41,high
+IMG_6256 (1).mp4,coconut water carton,True,desk,on the white desk next to the laptop,laptop,0,29,high
+IMG_6256 (1).mp4,secondary laptop,True,desk,on the desk behind the main laptop,"laptop, drink can",0,17,high
+IMG_6256 (1).mp4,drink can,True,desk,on the desk behind the secondary laptop,secondary laptop,3,17,high

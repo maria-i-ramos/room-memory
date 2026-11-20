@@ -14,7 +14,7 @@ VIDEO_FOLDER = Path("data/videos")
 OUTPUT_FOLDER = Path("data/outputs/gemini")
 
 # Change models using GEMINI_MODEL in the terminal
-MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+MODEL = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 
 # Keep different model results separate
 MODEL_OUTPUT_FOLDER = OUTPUT_FOLDER / MODEL

@@ -1,0 +1,21 @@
+video,object,ground_truth,predicted,correct
+IMG_2133.MOV,glasses,desk,desk,True
+IMG_2133.MOV,water bottle,desk,desk,True
+IMG_2133.MOV,remote control,desk,desk,True
+IMG_2134.MOV,glasses,bed,bed,True
+IMG_2134.MOV,water bottle,desk,desk,True
+IMG_2134.MOV,remote control,bed,bed,True
+IMG_2135.MOV,keys,bed,bed,True
+IMG_2135.MOV,water bottle,white dresser,dresser,False
+IMG_2135.MOV,glasses,bed,bed,True
+IMG_2135.MOV,remote control,bed,bed,True
+IMG_2136.MOV,glasses,white dresser,dresser,False
+IMG_2136.MOV,water bottle,bed,bed,True
+IMG_2136.MOV,remote control,bed,bed,True
+IMG_2137.MOV,glasses,white dresser,dresser,False
+IMG_2137.MOV,water bottle,bed,bed,True
+IMG_2137.MOV,remote control,floor (white rug),rug,False
+IMG_2138.MOV,keys,desk,desk,True
+IMG_2138.MOV,water bottle,bed,bed,True
+IMG_2138.MOV,glasses,desk,desk,True
+IMG_2138.MOV,remote control,white dresser,dresser,False

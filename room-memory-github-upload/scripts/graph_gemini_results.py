@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 
 # This is where our Gemini results are saved
-gemini_folder = Path("data/outputs/gemini")
+gemini_folder = Path("data/outputs/gemini/gemini-3.6-flash")
 results_folder = Path("results")
 graphs_folder = results_folder / "graphs"
 
