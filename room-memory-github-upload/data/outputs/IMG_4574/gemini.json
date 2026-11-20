@@ -1,0 +1,101 @@
+{
+  "video": "IMG_4574.mp4",
+  "model": "gemini-3.8-flash",
+  "target_objects": [
+    "glasses",
+    "card",
+    "keys",
+    "charger",
+    "Apple Pencil",
+    "mouse"
+  ],
+  "queried_objects": [
+    "glasses",
+    "card",
+    "keys",
+    "charger",
+    "Apple Pencil",
+    "mouse",
+    "banana",
+    "scissors",
+    "wallet"
+  ],
+  "predictions": {
+    "objects": [
+      {
+        "name": "glasses",
+        "found": true,
+        "first_seen_seconds": 0.0,
+        "last_seen_seconds": 5.0,
+        "location": "on the desk",
+        "confidence": "high"
+      },
+      {
+        "name": "card",
+        "found": true,
+        "first_seen_seconds": 0.0,
+        "last_seen_seconds": 6.0,
+        "location": "on the desk",
+        "confidence": "high"
+      },
+      {
+        "name": "keys",
+        "found": true,
+        "first_seen_seconds": 5.0,
+        "last_seen_seconds": 10.0,
+        "location": "on the desk",
+        "confidence": "high"
+      },
+      {
+        "name": "charger",
+        "found": true,
+        "first_seen_seconds": 5.0,
+        "last_seen_seconds": 16.0,
+        "location": "on the desk",
+        "confidence": "high"
+      },
+      {
+        "name": "Apple Pencil",
+        "found": true,
+        "first_seen_seconds": 8.0,
+        "last_seen_seconds": 13.0,
+        "location": "on the desk",
+        "confidence": "high"
+      },
+      {
+        "name": "mouse",
+        "found": true,
+        "first_seen_seconds": 11.0,
+        "last_seen_seconds": 16.0,
+        "location": "on the desk",
+        "confidence": "high"
+      },
+      {
+        "name": "banana",
+        "found": false,
+        "first_seen_seconds": null,
+        "last_seen_seconds": null,
+        "location": null,
+        "confidence": "high"
+      },
+      {
+        "name": "scissors",
+        "found": false,
+        "first_seen_seconds": null,
+        "last_seen_seconds": null,
+        "location": null,
+        "confidence": "high"
+      },
+      {
+        "name": "wallet",
+        "found": false,
+        "first_seen_seconds": null,
+        "last_seen_seconds": null,
+        "location": null,
+        "confidence": "high"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"objects\": [\n    {\n      \"name\": \"glasses\",\n      \"found\": true,\n      \"first_seen_seconds\": 0.0,\n      \"last_seen_seconds\": 5.0,\n      \"location\": \"on the desk\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"name\": \"card\",\n      \"found\": true,\n      \"first_seen_seconds\": 0.0,\n      \"last_seen_seconds\": 6.0,\n      \"location\": \"on the desk\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"name\": \"keys\",\n      \"found\": true,\n      \"first_seen_seconds\": 5.0,\n      \"last_seen_seconds\": 10.0,\n      \"location\": \"on the desk\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"name\": \"charger\",\n      \"found\": true,\n      \"first_seen_seconds\": 5.0,\n      \"last_seen_seconds\": 16.0,\n      \"location\": \"on the desk\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"name\": \"Apple Pencil\",\n      \"found\": true,\n      \"first_seen_seconds\": 8.0,\n      \"last_seen_seconds\": 13.0,\n      \"location\": \"on the desk\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"name\": \"mouse\",\n      \"found\": true,\n      \"first_seen_seconds\": 11.0,\n      \"last_seen_seconds\": 16.0,\n      \"location\": \"on the desk\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"name\": \"banana\",\n      \"found\": false,\n      \"first_seen_seconds\": null,\n      \"last_seen_seconds\": null,\n      \"location\": null,\n      \"confidence\": \"high\"\n    },\n    {\n      \"name\": \"scissors\",\n      \"found\": false,\n      \"first_seen_seconds\": null,\n      \"last_seen_seconds\": null,\n      \"location\": null,\n      \"confidence\": \"high\"\n    },\n    {\n      \"name\": \"wallet\",\n      \"found\": false,\n      \"first_seen_seconds\": null,\n      \"last_seen_seconds\": null,\n      \"location\": null,\n      \"confidence\": \"high\"\n    }\n  ]\n}",
+  "runtime_seconds": 60.23
+}
