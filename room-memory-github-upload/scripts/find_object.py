@@ -5,6 +5,7 @@ Example:
 """
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -26,16 +27,16 @@ def main():
     if not result["found"]:
         print(f'Not found: "{args.object}". {result["note"] or ""}'.strip())
         labels = sorted({d["label"] for d in detections})
-        print("Objects YOLO saw in this video:", ", ".join(labels) or "none")
+        print("Detected labels in this video:", ", ".join(labels) or "none")
         return 1
 
     last = result["last_seen"]
-    safe_name = result["label"].replace(" ", "_")
+    safe_name = re.sub(r"[^\w-]+", "_", result["label"]).strip("_") or "object"
     image_path = draw_last_seen(results_folder / "frames", last, results_folder / "search" / f"last_seen_{safe_name}.jpg")
     result["image"] = str(image_path)
     (results_folder / "search" / f"last_seen_{safe_name}.json").write_text(json.dumps(result, indent=2))
 
-    print(f'"{args.object}" -> YOLO label "{result["label"]}"')
+    print(f'"{args.object}" -> label "{result["label"]}"')
     print(f'  Last seen at {last["timestamp_seconds"]:.1f}s (frame {last["source_frame_index"]}), '
           f'confidence {last["confidence"]:.2f}')
     print(f'  Box (x1, y1, x2, y2): {last["xyxy"]}')

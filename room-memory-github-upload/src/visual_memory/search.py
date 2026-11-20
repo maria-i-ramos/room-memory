@@ -4,10 +4,11 @@ from pathlib import Path
 
 import cv2
 
-# People type everyday words, but YOLO (COCO) uses its own label names.
-# This maps common phrases to the COCO label we should search for.
-# A value of None means "COCO YOLO has no class for this" so we can say so honestly.
+# Retain common aliases for recordings indexed with COCO labels.
 ALIASES = {
+    "glasses": "eyeglasses",
+    "camera": "compact camera",
+    "pill bottle": "medicine bottle",
     "water bottle": "bottle",
     "bottle": "bottle",
     "tv remote": "remote",
@@ -21,16 +22,6 @@ ALIASES = {
     "bag": "backpack",
     "notebook": "book",
     "computer": "laptop",
-    "glasses": None,
-    "eyeglasses": None,
-    "sunglasses": None,
-    "keys": None,
-    "key": None,
-    "earbuds": None,
-    "wired earbuds": None,
-    "airpods": None,
-    "headphones": None,
-    "wallet": None,
 }
 
 
@@ -45,21 +36,16 @@ def load_detections(results_folder):
 
 
 def resolve_query(query, known_labels=()):
-    """Turn what the user typed into a YOLO label.
-
-    Returns (label, note). label is None when YOLO can't detect that kind of object.
-    """
-    text = " ".join(query.lower().strip().split())
-    if text in known_labels:
-        return text, None
-    if text in ALIASES:
-        label = ALIASES[text]
-        if label is None:
-            return None, f'"{query}" is not one of the pretrained YOLO (COCO) classes, so it can\'t be found yet.'
-        return label, None
-    # Plurals like "bottles" or "books".
-    if text.endswith("s") and text[:-1] in known_labels:
-        return text[:-1], None
+    """Prefer a detected prompt, then try legacy aliases and simple plurals."""
+    labels = {label.casefold(): label for label in known_labels}
+    text = " ".join(query.casefold().split())
+    for candidate in (text, ALIASES.get(text), text.removesuffix("s"), text + "s"):
+        if candidate in labels:
+            return labels[candidate], None
+    canonical = ALIASES.get(text, text)
+    for alias, target in ALIASES.items():
+        if target == canonical and alias in labels:
+            return labels[alias], None
     return text, None
 
 

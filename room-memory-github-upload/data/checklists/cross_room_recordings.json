@@ -1,0 +1,38 @@
+[
+  {
+    "file": "IMG_2367.MOV",
+    "room": "Original room",
+    "visible_items": {
+      "eyeglasses": "dresser",
+      "keys": "bed",
+      "original water bottle": "desk"
+    }
+  },
+  {
+    "file": "IMG_2368.MOV",
+    "room": "Second room",
+    "visible_items": {
+      "eyeglasses": "white dresser",
+      "keys": "desk",
+      "original water bottle": "carpeted floor"
+    }
+  },
+  {
+    "file": "IMG_2369.MOV",
+    "room": "Second room",
+    "visible_items": {
+      "eyeglasses": "white dresser",
+      "keys": "desk",
+      "original water bottle": "carpeted floor",
+      "red water bottle": "white dresser"
+    }
+  },
+  {
+    "file": "IMG_2370.MOV",
+    "room": "Original room",
+    "visible_items": {
+      "red water bottle": "desk"
+    },
+    "absent_items": ["original water bottle"]
+  }
+]

@@ -1,9 +1,16 @@
-# Keep personal recordings and generated results out of Git
+# Track only the selected movement recordings; ignore other local videos
 data/videos/*
 !data/videos/.gitkeep
+!data/videos/IMG_213[3-8].MOV
 data/outputs/
 *.pt
 .venv/
 __pycache__/
 *.egg-info/
 .pytest_cache/
+
+# YOLOE text encoder weights
+*.ts
+
+# Local room app queue, uploads, and database
+data/room-app/

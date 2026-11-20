@@ -38,8 +38,8 @@ def test_aliases_and_plurals():
 def test_unsupported_object_explains_why():
     result = find_last_seen(DETECTIONS, "keys")
     assert not result["found"]
-    assert result["label"] is None
-    assert "COCO" in result["note"]
+    assert result["label"] == "keys"
+    assert "detections" in result["note"]
 
 
 def test_object_never_seen():
