@@ -3,30 +3,40 @@ import os
 import json
 import time
 import argparse
+import random
 from pathlib import Path
 
 from google import genai
 
 
-# Where our videos and results are saved
+# Project folders
 VIDEO_FOLDER = Path("data/videos")
 OUTPUT_FOLDER = Path("data/outputs/gemini")
-MODEL = "gemini-3.8-flash"
+
+# Change models using GEMINI_MODEL in the terminal
+MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+
+# Keep different model results separate
+MODEL_OUTPUT_FOLDER = OUTPUT_FOLDER / MODEL
+
+# Retry settings
+MAX_RETRIES = 3
+RETRY_ERRORS = [429, 500, 502, 503, 504]
 
 
 def upload_video(client, video_path):
-    print(f"Uploading {video_path.name}...")
+    print(f"Uploading {video_path.name}...", flush=True)
 
     video = client.files.upload(file=str(video_path))
 
-    # Gemini needs to process the video before we can use it
+    # Wait for Gemini to finish processing the upload
     while not video.state or video.state.name == "PROCESSING":
-        print("Waiting for Gemini to process the video...")
+        print("Waiting for Gemini to process the video...", flush=True)
         time.sleep(5)
         video = client.files.get(name=video.name)
 
     if video.state.name != "ACTIVE":
-        raise RuntimeError(f"Couldn't process {video_path.name}")
+        raise RuntimeError(f"Could not process {video_path.name}")
 
     return video
 
@@ -34,19 +44,51 @@ def upload_video(client, video_path):
 def ask_gemini(client, videos, prompt, output_file):
     start_time = time.time()
 
+    # Upload the videos once
     uploaded_videos = []
 
     for video_path in videos:
         uploaded = upload_video(client, video_path)
         uploaded_videos.append(uploaded)
 
-    print("Asking Gemini about the video...")
+    response = None
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=uploaded_videos + [prompt],
-        config={"response_mime_type": "application/json"}
-    )
+    # Retry temporary errors without uploading again
+    for attempt in range(MAX_RETRIES):
+        try:
+            print(
+                f"Asking Gemini ({MODEL}) - "
+                f"attempt {attempt + 1}/{MAX_RETRIES}",
+                flush=True
+            )
+
+            response = client.models.generate_content(
+                model=MODEL,
+                contents=uploaded_videos + [prompt],
+                config={
+                    "response_mime_type": "application/json"
+                }
+            )
+
+            break
+
+        except Exception as error:
+            error_code = getattr(error, "code", None)
+
+            if error_code not in RETRY_ERRORS:
+                raise
+
+            if attempt == MAX_RETRIES - 1:
+                print("All retry attempts failed.", flush=True)
+                raise
+
+            # Wait longer after each failed attempt
+            wait_time = 15 * (2 ** attempt) + random.uniform(0, 3)
+
+            print(f"Temporary Gemini error: {error_code}")
+            print(f"Retrying in {wait_time:.0f} seconds...", flush=True)
+
+            time.sleep(wait_time)
 
     raw_response = response.text or ""
 
@@ -54,11 +96,10 @@ def ask_gemini(client, videos, prompt, output_file):
         predictions = json.loads(raw_response)
     except json.JSONDecodeError:
         predictions = None
-        print("Gemini didn't return valid JSON.")
+        print("Gemini did not return valid JSON.")
 
     runtime = round(time.time() - start_time, 2)
 
-    # Save the response so we can evaluate it later
     results = {
         "videos": [video.name for video in videos],
         "model": MODEL,
@@ -76,91 +117,130 @@ def ask_gemini(client, videos, prompt, output_file):
     print(f"Saved results to {output_file}")
     print(f"Total time: {runtime} seconds")
 
+    return results
+
 
 def identify_objects(client, limit=None):
-
-    # Find all the videos in our folder
     videos = sorted(
         video for video in VIDEO_FOLDER.iterdir()
         if video.suffix.lower() in [".mp4", ".mov"]
     )
 
     prompt = """
-    We're testing how well Gemini can identify objects
-    and describe where they are in a room.
+    We are testing how well Gemini identifies objects
+    and remembers their locations in room videos.
 
-    Watch the entire video and identify the objects you see.
+    Watch the entire video carefully.
 
-    Focus on everyday items like water bottles, wallets,
-    keys, glasses, chargers, phones, pencils, and laptops.
-    Also include furniture that helps describe their locations.
+    Identify the everyday objects you can see, especially
+    items someone might misplace, such as keys, glasses,
+    wallets, water bottles, chargers, phones, pencils,
+    laptops, and similar items.
+
+    Include furniture when it helps explain an
+    object's location.
 
     For each object, return:
-    - name: what the object is
+    - name: the name of the object
     - found: true
-    - surface: what it is sitting on (desk, floor, bed, etc.)
+    - surface: what the object is sitting on
+      (desk, floor, table, chair, bed, etc.)
     - nearby_objects: other objects close to it
-    - location: a detailed description of where it is
-    - first_seen_seconds: when it first appears
-    - last_seen_seconds: when it was last visible
+    - location: a specific description of its location
+    - first_seen_seconds: when the object first appears
+    - last_seen_seconds: when the object was last visible
     - confidence: low, medium, or high
 
-    If an object appears in multiple locations, use its
-    last visible location.
+    If an object changes locations during the video,
+    report its last visible location.
 
-    Only report objects and relationships you can actually see.
-    If the surface isn't clear, use null instead of guessing.
+    If an object disappears behind something, do not
+    assume it has moved unless the video shows evidence.
 
-    Don't make up objects or timestamps.
+    Only report objects and spatial relationships that
+    are visually supported.
 
-    Return valid JSON with an "objects" list.
+    If the supporting surface is unclear, return null.
+
+    Do not invent objects or timestamps.
+
+    Return valid JSON in this format:
+
+    {
+        "objects": [
+            {
+                "name": "water bottle",
+                "found": true,
+                "surface": "desk",
+                "nearby_objects": ["laptop"],
+                "location": "on the desk beside the laptop",
+                "first_seen_seconds": 1,
+                "last_seen_seconds": 8,
+                "confidence": "high"
+            }
+        ]
+    }
+
+    The example only shows the JSON structure.
+    Do not assume that example objects are present.
     """
 
     completed = 0
     attempted = 0
 
     for video in videos:
-
         output = (
-            OUTPUT_FOLDER
+            MODEL_OUTPUT_FOLDER
             / "identification"
             / f"{video.stem}.json"
         )
 
-        # Skip videos we've already tested
+        # Skip results already completed with this model
         if output.exists():
             print(f"Already tested {video.name}, skipping.")
             continue
 
+        # Limit the number of new video attempts
         if limit is not None and attempted >= limit:
             break
 
         attempted += 1
-        
+
         try:
-            ask_gemini(client, [video], prompt, output)
-            completed += 1
+            result = ask_gemini(
+                client,
+                [video],
+                prompt,
+                output
+            )
+
+            if result["predictions"] is not None:
+                completed += 1
 
         except Exception as error:
             print(f"Error with {video.name}: {error}")
 
-        if limit is not None and completed >= limit:
-            break
-
-    print(f"Completed {completed} new identification tests.")
+    print()
+    print("Identification experiments finished.")
+    print(f"Attempted: {attempted}")
+    print(f"Completed with valid JSON: {completed}")
+    print(f"Model: {MODEL}")
 
 
 def compare_movement(client, first_name, second_name, test_name):
-
     first_video = VIDEO_FOLDER / first_name
     second_video = VIDEO_FOLDER / second_name
 
-    if not first_video.exists() or not second_video.exists():
-        print(f"Missing a video for {test_name}. Skipping.")
+    if not first_video.exists():
+        print(f"Missing video: {first_video}")
+        return
+
+    if not second_video.exists():
+        print(f"Missing video: {second_video}")
         return
 
     output = (
-        OUTPUT_FOLDER
+        MODEL_OUTPUT_FOLDER
         / "movement"
         / f"{test_name}.json"
     )
@@ -170,17 +250,18 @@ def compare_movement(client, first_name, second_name, test_name):
         return
 
     prompt = f"""
-    We're testing if Gemini can recognize when objects
-    have changed locations between two room recordings.
+    We are testing whether Gemini can recognize changes
+    in object locations across two room recordings.
 
     You are watching TWO videos in chronological order.
 
     Video 1: {first_name}
     Video 2: {second_name}
 
-    Look for the water bottle and wallet in both videos.
+    Identify the water bottle and wallet in both videos,
+    if they are visible.
 
-    For EACH object, return:
+    For each object, return:
     - object_name
     - found_in_first_video: true or false
     - first_video_surface: desk, floor, table, etc.
@@ -193,17 +274,42 @@ def compare_movement(client, first_name, second_name, test_name):
 
     Also return:
     - objects_swapped_locations: true, false, or null
-    - explanation: explain any location changes you noticed
+    - explanation: describe any location changes
 
-    Use only what you can actually see in both recordings.
+    Compare the last visible location of each object
+    in the first video with its last visible location
+    in the second video.
 
-    Don't assume objects moved just because there are
-    two different videos.
+    Do not assume objects moved just because there
+    are two recordings.
 
-    If you can't clearly identify a surface or location,
-    return null rather than guessing.
+    If an object is missing from either video, return
+    null for any location you cannot establish.
 
-    Return valid JSON.
+    If the supporting surface is unclear, use null.
+
+    Return valid JSON in this format:
+
+    {{
+        "objects": [
+            {{
+                "object_name": "water bottle",
+                "found_in_first_video": true,
+                "first_video_surface": null,
+                "first_video_location": null,
+                "found_in_second_video": true,
+                "second_video_surface": null,
+                "second_video_location": null,
+                "moved": null,
+                "confidence": "low"
+            }}
+        ],
+        "objects_swapped_locations": null,
+        "explanation": ""
+    }}
+
+    The example only shows the JSON structure.
+    Make all predictions from the actual videos.
     """
 
     try:
@@ -219,7 +325,6 @@ def compare_movement(client, first_name, second_name, test_name):
 
 
 def main():
-
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
@@ -232,12 +337,11 @@ def main():
         "--limit",
         type=int,
         default=None,
-        help="Only run this many new identification videos"
+        help="Maximum number of new identification attempts"
     )
 
     args = parser.parse_args()
 
-    # Make sure our API key and videos are available
     if not os.getenv("GEMINI_API_KEY"):
         raise ValueError("GEMINI_API_KEY is missing")
 
@@ -246,14 +350,18 @@ def main():
 
     client = genai.Client()
 
-    # Test object identification and locations
+    print(f"Using Gemini model: {MODEL}")
+    print(f"Saving results to: {MODEL_OUTPUT_FOLDER}")
+    print()
+
+    # Test identification and location recognition
     if args.experiment in ["identify", "all"]:
         identify_objects(client, args.limit)
 
-    # Test whether Gemini recognizes location changes
+    # Test changes in object locations across recordings
     if args.experiment in ["movement", "all"]:
 
-        # Water bottle moves from desk to floor
+        # Water bottle changes from desk to floor
         compare_movement(
             client,
             "IMG_4889_from_MP4.mp4",
@@ -264,7 +372,7 @@ def main():
         # Water bottle and wallet swap locations
         compare_movement(
             client,
-            "IMG_4886 2.mp4",
+            "IMG_4866 2.mp4",
             "IMG_4887.mp4",
             "bottle_wallet_swap"
         )
