@@ -1,0 +1,57 @@
+{
+  "video": "IMG_2368.MOV",
+  "set": "cross-room",
+  "room": "Second room",
+  "objects": [
+    {
+      "object": "eyeglasses",
+      "object_id": "glasses",
+      "previous_verified_sighting": {
+        "video": "IMG_2367.MOV",
+        "room": "Original room",
+        "surface": "white dresser"
+      },
+      "present": true,
+      "surface": "white dresser",
+      "change": "moved",
+      "evidence": {
+        "timestamp_seconds": 0.0,
+        "source_frame_index": 0
+      }
+    },
+    {
+      "object": "keys",
+      "object_id": "keys",
+      "description": "keys on the patterned lanyard",
+      "previous_verified_sighting": {
+        "video": "IMG_2367.MOV",
+        "room": "Original room",
+        "surface": "bed"
+      },
+      "present": true,
+      "surface": "desk",
+      "change": "moved",
+      "evidence": {
+        "timestamp_seconds": 3.0,
+        "source_frame_index": 90
+      }
+    },
+    {
+      "object": "water bottle",
+      "object_id": "original-bottle",
+      "description": "original dark water bottle",
+      "previous_verified_sighting": {
+        "video": "IMG_2367.MOV",
+        "room": "Original room",
+        "surface": "desk"
+      },
+      "present": true,
+      "surface": "carpeted floor",
+      "change": "moved",
+      "evidence": {
+        "timestamp_seconds": 5.0,
+        "source_frame_index": 150
+      }
+    }
+  ]
+}
