@@ -56,3 +56,76 @@ def test_full_script_without_yolo(example_video, tmp_path):
     subprocess.run([sys.executable, str(script), str(example_video), "--out", str(output), "--skip-detection"], check=True)
     assert len(json.loads((output / "frames.json").read_text())) == 6
     assert not (output / "detections.json").exists()
+
+
+def test_sam_checklist_boxes_are_searchable(example_video, tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    sam = pytest.importorskip("ultralytics.models.sam")
+    from visual_memory.detect import checklist_prompts, detect_objects
+    from visual_memory.search import find_last_seen
+
+    prompts = checklist_prompts("IMG_4572.mp4")
+    assert prompts == ["card", "keys", "Apple Pencil"]
+    frames = extract_frames(example_video, tmp_path / "frames", 1)
+    checkpoint = tmp_path / "sam3.pt"
+    checkpoint.touch()
+
+    class FakePredictor:
+        def __init__(self, overrides):
+            assert overrides["model"] == str(checkpoint)
+
+        def setup_model(self):
+            self.model = SimpleNamespace(transformer=SimpleNamespace(encoder=SimpleNamespace(layers=[])))
+
+        def reset_image(self):
+            self.image = None
+
+        def set_image(self, image):
+            assert self.image is None
+            self.image = image
+
+        def __call__(self, source, text):
+            assert source is None and self.image is not None and text[0] in prompts and len(text) == 1
+            box = SimpleNamespace(cls=np.array(0), conf=np.array(0.85),
+                                  xyxy=np.array([[6, 5, 20, 18]]))
+            return [SimpleNamespace(names=text, boxes=[box])]
+
+    monkeypatch.setattr(sam, "SAM3SemanticPredictor", FakePredictor)
+    detections = detect_objects(frames, tmp_path / "frames", checkpoint, prompts=prompts)
+    assert {d["label"] for d in detections} == set(prompts)
+    assert len(detections) == len(frames) * len(prompts)
+    last = find_last_seen(detections, "apple pencil")["last_seen"]
+    assert last == {"label": "Apple Pencil", "confidence": 0.85, "timestamp_seconds": 2,
+                    "source_frame_index": 20, "xyxy": [6, 5, 20, 18]}
+
+
+def test_yoloe_uses_text_prompts(example_video, tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    ultralytics = pytest.importorskip("ultralytics")
+    from visual_memory.detect import detect_objects
+
+    prompts = ["eyeglasses", "desk"]
+    frames = extract_frames(example_video, tmp_path / "frames", 1)
+
+    class FakeYOLOE:
+        def __init__(self, model_name):
+            assert model_name == "yoloe-11l-seg.pt"
+
+        def get_text_pe(self, names):
+            assert names == prompts
+            return "embeddings"
+
+        def set_classes(self, names, embeddings):
+            assert names == prompts and embeddings == "embeddings"
+
+        def predict(self, image, conf, verbose):
+            box = SimpleNamespace(cls=np.array(0), conf=np.array(.8),
+                                  xyxy=np.array([[1, 2, 20, 30]]))
+            return [SimpleNamespace(names=prompts, boxes=[box])]
+
+    monkeypatch.setattr(ultralytics, "YOLOE", FakeYOLOE)
+    detections = detect_objects(frames, tmp_path / "frames", "yoloe-11l-seg.pt", prompts=prompts)
+    assert len(detections) == 3
+    assert {item["label"] for item in detections} == {"eyeglasses"}
+    with pytest.raises(ValueError, match="YOLOE needs"):
+        detect_objects(frames, tmp_path / "frames", "yoloe-11l-seg.pt")

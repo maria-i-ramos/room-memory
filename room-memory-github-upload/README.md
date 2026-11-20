@@ -1,171 +1,26 @@
 # Where Did My Stuff Go? — Project Guide
 
-Take a short video of a room and use it later to find misplaced objects. Ask "where is my water bottle?" and get back the frame where it was last seen, with a box drawn around it.
+[Run the local web app](START_HERE.md#run-room-memory-in-a-browser) to upload a room recording and search across saved sightings. New uploads run YOLOE in the background and save evidence and estimated surfaces in SQLite. Optional CLIP matching lets the user search for a specific remembered item. SAM3 and FastSAM remain available for comparisons.
 
-This folder has the code, tests, sample videos, and checklists. All the commands below are run from **this folder** (`room-memory-github-upload/`).
+The evaluation has two sets. The [six original movement recordings](START_HERE.md#replay-the-six-original-movement-recordings) (IMG_2133–IMG_2138) test last-seen locations in one room. The [cross-room test](CROSS_ROOM_RESULTS.md) (IMG_2367–IMG_2370) adds a second room and a red bottle that could be mistaken for the enrolled bottle. Both sets can be replayed with the web app's YOLOE prompts. See the [YOLOE](YOLOE_RESULTS.md), [FastSAM](FASTSAM_RESULTS.md), [SAM3](SAM3_RESULTS.md), and [re-identification](REID_RESULTS.md) reports for the follow-up experiments.
 
-## How it works
+Run `python -m pytest -q` from this folder to check frame extraction, detection integration, last-seen search, and the historical YOLO baseline.
 
-```
-Input video (10–30 s room recording)
-   ↓  Step 1: video.py       open the video, read FPS / size / duration
-Extract frames
-   ↓  Step 2: frames.py      save about 2 frames per second as JPEGs with timestamps
-Detect objects
-   ↓  Step 3: detect.py      run pretrained YOLO11 on each frame
-Save detections
-   ↓  Step 4: run_baseline.py   write label, confidence, timestamp, box → detections.json
-Search object
-   ↓  Step 5: search.py      map "water bottle" → YOLO label "bottle"; find matches
-Return last-seen frame
-      Step 6: search.py      pick the latest confident sighting; draw box + timestamp
-```
+## Results so far
 
-**Step 1: open the video** (`video.py`). Checks that the file exists, opens it with OpenCV, reads the FPS and frame count, and decodes the first frame to make sure the video isn't empty. It takes the width and height from that frame, which handles rotated phone videos better.
-
-**Step 2: extract frames** (`frames.py`). Reads every frame and works out its time as frame number ÷ FPS. It saves a frame each time that time reaches the next 0.5 s mark (at 2 FPS). Each saved frame gets a JPEG and an entry in `frames.json` with its filename, timestamp, and frame number.
-
-**Step 3: detect objects** (`detect.py`). Loads YOLO (`yolo11n.pt` by default; it downloads on the first run) and runs it on every saved frame, keeping boxes with confidence ≥ 0.25.
-
-**Step 4: save detections** (`run_baseline.py`). Writes every box to `detections.json`, plus a short `summary.json`.
-
-**Step 5: search** (`search.py`). Turns everyday words into YOLO label names ("water bottle" → `bottle`, "phone" → `cell phone`). If an object has no YOLO category (keys, glasses, earbuds), it says so instead of silently returning nothing.
-
-**Step 6: last seen** (`search.py`). Among detections with confidence ≥ 0.25, picks the one with the latest timestamp. If that frame has two boxes for the object, it uses the more confident one. It draws the box and timestamp on that frame.
-
-## Files
-
-```
-room-memory-github-upload/
-├── README.md                this guide
-├── START_HERE.md            original setup notes
-├── pyproject.toml           project name + libraries to install
-├── .gitignore               keeps outputs, .venv, model weights out of Git
-├── src/visual_memory/
-│   ├── video.py             step 1
-│   ├── frames.py            step 2
-│   ├── detect.py            step 3
-│   └── search.py            steps 5–6
-├── scripts/
-│   ├── run_baseline.py      runs steps 1–4 on one video
-│   └── find_object.py       runs steps 5–6 on a results folder
-├── tests/
-│   ├── conftest.py          lets tests import the code in src/
-│   ├── test_pipeline.py     steps 1–2 on a tiny generated video (fast)
-│   ├── test_search.py       steps 5–6 on made-up detections (fast)
-│   └── test_real_videos.py  steps 1–6 on our 3 real videos (~20 s, needs YOLO)
-└── data/
-    ├── videos/              IMG_4203.mp4, IMG_4206.mp4, IMG_4207.mp4
-    ├── checklists/          what's really in each video + whether YOLO found it
-    └── outputs/             results (not committed to Git)
-```
-
-## Setup (first time only)
-
-Use **Python 3.10 or newer**.
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e '.[detection,test]'
-```
-
-- `python3 -m venv .venv` makes a private Python just for this project, inside the `.venv` folder.
-- `source .venv/bin/activate` switches the current Terminal window to that Python. Your prompt will show `(.venv)`.
-- `pip install -e '.[detection,test]'` installs OpenCV and NumPy, plus `ultralytics` (YOLO, which brings in PyTorch) and `pytest`.
-  - `-e` means edits to `src/` take effect without reinstalling.
-  - The quotes stop the Mac shell from treating the brackets as a special pattern.
-
-On Windows, activate with `.venv\Scripts\activate` instead.
-
-**Every time after that:**
-
-```bash
-cd room-memory-github-upload
-source .venv/bin/activate
-```
-
-## Running it
-
-**Steps 1–4: process a video**
-
-```bash
-python scripts/run_baseline.py data/videos/IMG_4203.mp4 --out data/outputs/video1
-python scripts/run_baseline.py data/videos/IMG_4206.mp4 --out data/outputs/video2
-python scripts/run_baseline.py data/videos/IMG_4207.mp4 --out data/outputs/video3
-```
-
-Options:
-
-| Option | What it does |
-|---|---|
-| `--fps 1` | Change how many frames are saved per second (default 2) |
-| `--model yolo11s.pt` | Use a different YOLO model (default `yolo11n.pt`) |
-| `--skip-detection` | Run only steps 1–2 (no YOLO download needed) |
-
-**Steps 5–6: find an object**
-
-```bash
-python scripts/find_object.py data/outputs/video2 "water bottle"
-```
-
-```
-"water bottle" -> YOLO label "bottle"
-  Last seen at 4.7s (frame 14), confidence 0.78
-  Box (x1, y1, x2, y2): [0.6, 96.1, 196.6, 701.3]
-  Seen in 4 sampled frames, first at 3.0s
-  Image: data/outputs/video2/search/last_seen_bottle.jpg
-```
-
-Use `--min-confidence 0.4` to ignore weak detections.
-
-## Where the results go
-
-Each run creates a folder like `data/outputs/video2/`:
-
-| File | What's in it |
-|---|---|
-| `video_info.json` | FPS, width, height, duration |
-| `frames/` | the saved JPEG frames |
-| `frames.json` | each frame's filename and timestamp |
-| `detections.json` | **every object found**: label, confidence, timestamp, frame number, box |
-| `summary.json` | number of frames and detections, object types seen, run time (no confidences) |
-| `search/last_seen_<label>.jpg` | the last-seen frame with the box drawn on |
-| `search/last_seen_<label>.json` | the search result as data |
-
-To open them on a Mac: `open data/outputs/video2/detections.json` or `open data/outputs/video2/frames`.
-
-To get a quick table of objects and confidence scores for one video:
-
-```bash
-python -c "
-import json, sys, collections
-d = json.load(open(sys.argv[1]))
-by = collections.defaultdict(list)
-for x in d: by[x['label']].append(x['confidence'])
-print(f\"{'label':<12}{'boxes':>6}{'best':>7}{'avg':>7}\")
-for k, c in sorted(by.items(), key=lambda kv: -max(kv[1])):
-    print(f'{k:<12}{len(c):>6}{max(c):>7.2f}{sum(c)/len(c):>7.2f}')
-" data/outputs/video1/detections.json
-```
-
-## Tests
-
-```bash
-python -m pytest -v                            # all 33 tests, one line each
-python -m pytest -v tests/test_real_videos.py  # just the real-video tests
-python -m pytest -v | tee test_results.txt     # also save the output to a file
-```
-
-Test results print in the Terminal; they aren't saved anywhere unless you use `tee` (or `pytest-html` for a browsable report).
-
-| Test file | Checks | Needs YOLO? |
+| Experiment | Measured result | What it showed |
 |---|---|---|
-| `test_pipeline.py` | Step 1 reads the video correctly; step 2 saves the right frames and timestamps | No |
-| `test_search.py` | Aliases, plurals, latest sighting, confidence cutoff, unsupported objects, drawing the box | No |
-| `test_real_videos.py` | On each real video: it opens, ~2 frames/s are saved, boxes are inside the image, checklist objects are found, unsupported ones explain why, the last-seen image is drawn, `find_object.py` works | Yes (skips itself if YOLO or the videos are missing) |
+| [Original YOLO baselines](#historical-yolo-results) | YOLO11n found 4 of 4 supported checklist items and correctly named 0 of 5 outside its vocabulary. YOLO11s boxed 8 of 9 items versus 6 of 9 with YOLO11n, but correctly named fewer supported items. | The app needed a detector that could use prompts for everyday belongings. |
+| [Prompted detection and last-seen search](YOLOE_RESULTS.md) | The simpler-prompt YOLOE run processed 99 frames in 48.44 seconds and returned the correct clip and surface for 10 of 29 annotated placements. | YOLOE is the current upload detector. Its location estimates still need checks for missed or mislabeled surfaces. |
+| [SAM3 comparison](SAM3_RESULTS.md) | SAM3 took 26 minutes 40 seconds on the same sampled frames in a different hardware and inference configuration. The revised location rule returned the correct clip and surface for 13 of 29 placements, with zero wrong surface answers. | SAM3 found some small objects that YOLOE missed. The timings describe these configurations and do not isolate model speed. |
+| [FastSAM comparison](FASTSAM_RESULTS.md) | FastSAM and CLIP processed the 99 sampled frames in 244.32 seconds. | It found some objects missed by YOLOE, but the best segment for a prompt could be unrelated when an item was absent. |
+| [Object re-identification](REID_RESULTS.md) | Across 13 reviewed bottle detections, YOLOE labels gave 8 correct and 5 wrong identities. CLIP with multiple reference views gave 10 correct, 0 wrong, and 3 withheld. | Reference photos helped distinguish the bottles. This is a per-crop result, and the prototype still missed the latest clip for the original bottle. |
+| [Cross-room and red-bottle-only replay](CROSS_ROOM_RESULTS.md) | The red-only clip did not replace the original bottle's saved location. It did generate a false review suggestion. | The app now has a **Not this item** button to dismiss that suggestion without changing the last reliable location. |
 
-## Results
+These are small experiments with different scoring units. The [placement notes](data/checklists/movement_review.md) and [cross-room checklist](data/checklists/cross_room_recordings.json) record the expected results. This summary and the linked reports are intended to live in Git. Generated frames, detection files, and local app history stay on the machine that ran the experiments.
+
+## Historical YOLO results
+
 
 All runs use a minimum confidence of 0.25. In the "Really is" columns below, we checked the main labels by looking at the frames.
 
@@ -256,24 +111,7 @@ YOLO11s **finds** more objects (sunglasses and earbuds are boxed for the first t
 7. **Noise.** Feet and hands get boxed as "person", plus a few low-confidence false alarms.
 8. **Unusual camera angle.** COCO photos are mostly from eye level; our clips look down at a dim tabletop from a moving phone. This likely lowers confidence, though we haven't tested it.
 
-## Next steps
-
-| Priority | Change | Fixes |
-|---|---|---|
-| 1 | Try **YOLO-World** (open vocabulary) with our own names: "keys", "sunglasses", "earbuds", "water bottle" | Problems 1–3 |
-| 2 | Search clean-up: ignore "person", treat bottle/cup/vase as one, cutoff of about 0.4 | Problems 3 and 7 |
-| 3 | Prefer last-seen boxes that don't touch the edge of the image | Problem 6 |
-| 4 | Record more test videos with more objects, rooms, and lighting | Three clips are too few to trust the numbers |
-| 5 | Fine-tune YOLO on our own items | Problems 1–5, if YOLO-World isn't enough |
-| 6 | Track objects across frames | Problem 4; telling duplicates apart |
-
-**Toward an app or website**
-
-1. One shared database (SQLite) of detections across all videos, with when each video was recorded, so "last seen" can mean a real date and time.
-2. A Streamlit prototype: upload a video, type an object, see the last-seen frame.
-3. A FastAPI backend (upload and search endpoints) with a website or phone app.
-
-## Limitations
+## Limitations of the original YOLO baseline
 
 - Timestamps are estimated from frame number ÷ FPS. Phone videos can have variable frame rates, so they're approximate.
 - "Last seen" currently means within one video, not across recordings.

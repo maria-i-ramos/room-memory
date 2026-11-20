@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Room Memory</title>
+<style>
+  :root { color-scheme: light; font: 16px/1.5 system-ui, sans-serif; color: #242e28; background: #f5f3ed; }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  main { width: min(980px, 100% - 2rem); margin: 3rem auto; }
+  h1 { font: 600 clamp(2.6rem, 8vw, 4rem)/1 Georgia, serif; margin: 0 0 2rem; }
+  h2, h3, p { margin: 0; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.05rem; }
+  a { color: #235743; }
+  .layout { display: grid; grid-template-columns: 3fr 2fr; gap: 1rem; align-items: start; }
+  section { padding: 1.3rem; background: #fffdf7; border: 1px solid #dbded3; border-radius: 14px; }
+  section > * + *, form > * + * { margin-top: .8rem; }
+  label { display: block; font-weight: 600; }
+  input, button, select { font: inherit; }
+  input, select { width: 100%; padding: .55rem; border: 1px solid #8e998f; border-radius: 6px; background: white; }
+  details summary { cursor: pointer; color: #235743; }
+  details form { margin-top: .75rem; }
+  button { padding: .6rem 1rem; background: #235743; color: white; border: 0; border-radius: 6px; cursor: pointer; }
+  button.secondary { background: transparent; color: #235743; border: 1px solid #8e998f; }
+  .muted { color: #4a5a51; font-size: .93rem; }
+  .answer { border-top: 1px solid #dbded3; padding-top: 1rem; }
+  .answer > * + * { margin-top: .5rem; }
+  img { display: block; max-width: 100%; max-height: 480px; border-radius: 8px; background: #edf0e8; }
+  ul { list-style: none; margin-bottom: 0; padding: 0; }
+  li { overflow-wrap: anywhere; border-top: 1px solid #dbded3; padding: .55rem 0; }
+  .message { padding: .75rem; margin-bottom: 1rem; background: #e5eee5; border-radius: 8px; }
+  @media (max-width: 700px) { .layout { grid-template-columns: 1fr; } main { margin-top: 1.5rem; } }
+</style>
+</head>
+<body>
+{% macro surface_form(sighting) %}
+  <details>
+    <summary>Confirm or correct the location</summary>
+    <form method="post" action="{{ url_for('set_surface', sighting_id=sighting.id) }}">
+      <input type="hidden" name="upload_token" value="{{ upload_token }}">
+      <label for="surface-{{ sighting.id }}">Where is the item in this frame?</label>
+      <select id="surface-{{ sighting.id }}" name="surface" required>
+        <option value="">Choose a surface</option>
+        {% for surface in surfaces %}
+          <option value="{{ surface }}"{% if surface == sighting.location %} selected{% endif %}>{{ 'Floor (on the rug)' if surface == 'rug' else surface | capitalize }}</option>
+        {% endfor %}
+      </select>
+      <button>Save location</button>
+    </form>
+  </details>
+{% endmacro %}
+{% macro remember_form(sighting) %}
+  {% if reid_enabled %}
+    <details>
+      <summary>{{ 'Save another reference photo' if sighting.identity_status else 'Remember this item' }}</summary>
+      <form method="post" action="{{ url_for('remember', sighting_id=sighting.id) }}">
+        <input type="hidden" name="upload_token" value="{{ upload_token }}">
+        <input type="hidden" name="query" value="{{ query }}">
+        <p class="muted">Save only if the highlight shows the belonging you want to remember.</p>
+        <label for="name-{{ sighting.id }}">Name for this belonging</label>
+        <input id="name-{{ sighting.id }}" name="name" value="{{ sighting.display_name }}"
+               maxlength="80" required {% if sighting.identity_status %}readonly{% endif %}>
+        <button>{{ 'Confirm item and save photo' if sighting.identity_status == 'review' else 'Save reference photo' }}</button>
+      </form>
+      {% if sighting.identity_status %}
+        <form method="post" action="{{ url_for('reference_photo') }}" enctype="multipart/form-data">
+          <input type="hidden" name="upload_token" value="{{ upload_token }}">
+          <input type="hidden" name="name" value="{{ sighting.display_name }}">
+          <label for="photo-{{ sighting.id }}">Or add a close-up from another angle</label>
+          <input id="photo-{{ sighting.id }}" type="file" name="photo" accept="image/jpeg,image/png" required>
+          <button>Upload reference photo</button>
+        </form>
+      {% endif %}
+    </details>
+  {% endif %}
+{% endmacro %}
+<main>
+  <h1>Room Memory</h1>
+  {% for message in get_flashed_messages() %}<p class="message" role="status">{{ message }}</p>{% endfor %}
+  <div class="layout">
+    <section aria-labelledby="search-title">
+      <h2 id="search-title">Find a belonging</h2>
+      <form action="{{ url_for('home') }}">
+        <label for="q">What are you looking for?</label>
+        <input id="q" name="q" value="{{ query }}" placeholder="Where are my glasses?" required>
+        <button>Search</button>
+      </form>
+      {% if remembered %}
+        <p class="muted">Remembered items
+          {% for name in remembered %}<a href="{{ url_for('home', q=name) }}">{{ name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+        </p>
+      {% endif %}
+      {% if query %}
+        {% if located %}
+          <div class="answer">
+            <h3>Last seen {% if located.location == 'rug' %}on the floor (on the rug){% else %}on the {{ located.location }}{% endif %}</h3>
+            <p>{{ located.display_name }} · {{ located.name }} · {{ '%.1f' | format(located.seconds) }}s</p>
+            <p class="muted">{{ (located.recorded_at | recorded) or 'Recording date unavailable' }} · {{ 'Confirmed by you' if located.status == 'confirmed' else 'Estimated location' }}</p>
+            {% if located.identity_status %}<p class="muted">{{ 'Item matched to your photos' if located.identity_status == 'matched' else 'Item confirmed by you' }}</p>{% endif %}
+            <a href="{{ url_for('evidence', sighting_id=located.id) }}"><img src="{{ url_for('evidence', sighting_id=located.id) }}" alt="Video frame with {{ located.display_name }} highlighted"></a>
+            {{ surface_form(located) }}
+            {{ remember_form(located) }}
+          </div>
+        {% endif %}
+        {% if latest and (not located or latest.id != located.id) %}
+          <div class="answer">
+            <h3>{{ 'Possible newer sighting' if located else 'Possible sighting' }}</h3>
+            <p>{{ latest.name }} · {{ '%.1f' | format(latest.seconds) }}s · {{ 'Item match needs review' if latest.identity_status == 'review' else latest.status }}</p>
+            {% if latest.recorded_at is not none %}<p class="muted">{{ latest.recorded_at | recorded }}</p>{% endif %}
+            <p class="muted">Check the highlighted candidate before relying on this sighting.</p>
+            <a href="{{ url_for('evidence', sighting_id=latest.id) }}"><img src="{{ url_for('evidence', sighting_id=latest.id) }}" alt="Video frame with a possible {{ latest.display_name }} highlighted"></a>
+            {% if latest.identity_status != 'review' %}{{ surface_form(latest) }}{% endif %}
+            {{ remember_form(latest) }}
+            {% if latest.identity_status == 'review' %}
+              <form method="post" action="{{ url_for('dismiss', sighting_id=latest.id) }}">
+                <input type="hidden" name="upload_token" value="{{ upload_token }}">
+                <button class="secondary">Not this item</button>
+              </form>
+            {% endif %}
+          </div>
+        {% elif not latest and label %}
+          <p class="answer">No saved sightings for “{{ label }}”.</p>
+        {% endif %}
+      {% else %}
+        <p class="muted">Searching for {{ items | join(', ') }}.</p>
+      {% endif %}
+    </section>
+    <section aria-labelledby="upload-title">
+      <h2 id="upload-title">Add a recording</h2>
+      <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="upload_token" value="{{ upload_token }}">
+        <label for="video">Room video</label>
+        <input id="video" name="video" type="file" accept=".mov,.mp4,.m4v" required>
+        <label for="recorded">When did you record it?</label>
+        <input id="recorded" name="recorded_at" type="datetime-local" value="{{ now }}" required>
+        <button>Upload and process</button>
+      </form>
+      <p class="muted">MOV, MP4, or M4V up to 250 MB. YOLOE processes uploads one at a time.</p>
+      <h3>Recent recordings</h3>
+      <p class="muted" id="pending" hidden>New sightings will be available when processing finishes. Search again to check for updates.</p>
+      <ul id="clips"><li>Loading recordings…</li></ul>
+    </section>
+  </div>
+</main>
+<script>
+  const clips = document.getElementById("clips");
+  const pending = document.getElementById("pending");
+  async function refreshClips() {
+    try {
+      const response = await fetch({{ url_for('clips') | tojson }}, {cache: "no-store"});
+      if (!response.ok) return;
+      const rows = await response.json();
+      pending.hidden = !rows.some(row => ["queued", "processing"].includes(row.status));
+      const entries = rows.map(row => {
+        const entry = document.createElement("li");
+        const name = document.createElement("strong");
+        name.textContent = row.name;
+        const detail = document.createElement("div");
+        detail.className = "muted";
+        detail.textContent = [row.recorded, row.status, row.error].filter(Boolean).join(" · ");
+        entry.append(name, detail);
+        return entry;
+      });
+      if (!entries.length) {
+        const entry = document.createElement("li");
+        entry.textContent = "No recordings yet.";
+        entries.push(entry);
+      }
+      clips.replaceChildren(...entries);
+    } catch {
+      // A sleeping or restarted local server may miss one refresh.
+    } finally {
+      setTimeout(refreshClips, 3000);
+    }
+  }
+  refreshClips();
+</script>
+</body>
+</html>

@@ -41,7 +41,7 @@ def processed_video(request, tmp_path_factory):
     out = tmp_path_factory.mktemp(video.stem)
     info = inspect_video(video)
     frames = extract_frames(video, out / "frames", 2)
-    detections = detect_objects(frames, out / "frames")
+    detections = detect_objects(frames, out / "frames", model_name="yolo11n.pt")
     (out / "detections.json").write_text(json.dumps(detections))
     return {"name": video.name, "info": info, "frames": frames, "detections": detections, "out": out}
 
@@ -85,7 +85,7 @@ def test_unsupported_objects_say_why(processed_video):
     for item in CHECKLIST[processed_video["name"]]["not_findable"]:
         result = find_last_seen(processed_video["detections"], item)
         assert not result["found"]
-        assert "COCO" in result["note"]
+        assert "detections" in result["note"]
 
 
 def test_last_seen_image_is_drawn(processed_video):
