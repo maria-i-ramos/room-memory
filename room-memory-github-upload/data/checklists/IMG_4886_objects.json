@@ -1,0 +1,173 @@
+{
+  "video": "IMG_4886.mp4",
+  "objects": [
+    {
+      "object": "bedside dresser",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "table lamp",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "book",
+      "coco_label": "book",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "framed photo collage",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "potted plant",
+      "coco_label": "potted plant",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "insulated tumbler",
+      "coco_label": "cup",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "plastic drink cup",
+      "coco_label": "cup",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "rolled pink yoga mat",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "guitar case",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "bed",
+      "coco_label": "bed",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "pillows",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "blankets",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "clothing",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "remote control",
+      "coco_label": "remote",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "area rug",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "large dresser",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "television",
+      "coco_label": "tv",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "hair dryer",
+      "coco_label": "hair drier",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "hair straightener",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "hair brush",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "glasses case or small pouch",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "greeting card",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "white diffuser or humidifier",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "power cords",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    }
+  ]
+}
