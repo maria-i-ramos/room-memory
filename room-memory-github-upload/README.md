@@ -19,6 +19,15 @@ Run `python -m pytest -q` from this folder to check frame extraction, detection 
 
 These are small experiments with different scoring units. The [placement notes](data/checklists/movement_review.md) and [cross-room checklist](data/checklists/cross_room_recordings.json) record the expected results. This summary and the linked reports are intended to live in Git. Generated frames, detection files, and local app history stay on the machine that ran the experiments.
 
+### Per-recording checklists
+
+| Recording set | Checklists in capture order |
+|---|---|
+| Original room movement | [2133](data/checklists/IMG_2133_objects.json) · [2134](data/checklists/IMG_2134_objects.json) · [2135](data/checklists/IMG_2135_objects.json) · [2136](data/checklists/IMG_2136_objects.json) · [2137](data/checklists/IMG_2137_objects.json) · [2138](data/checklists/IMG_2138_objects.json) |
+| Cross-room and red-bottle-only tests | [2367](data/checklists/IMG_2367_objects.json) · [2368](data/checklists/IMG_2368_objects.json) · [2369](data/checklists/IMG_2369_objects.json) · [2370](data/checklists/IMG_2370_objects.json) |
+
+These checklists record the room, object identity, surface, and one evidence timestamp for each verified sighting. A movement is measured from the object's previous verified sighting, which may be more than one clip back. `present: null` means the placement was unverified. `present: false` records confirmed absence, as in the original water bottle in IMG_2370. Model predictions do not determine the checklist labels.
+
 ## Historical YOLO results
 
 

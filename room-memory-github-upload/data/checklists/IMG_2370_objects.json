@@ -1,0 +1,33 @@
+{
+  "video": "IMG_2370.MOV",
+  "set": "cross-room",
+  "room": "Original room",
+  "objects": [
+    {
+      "object": "water bottle",
+      "object_id": "original-bottle",
+      "description": "original dark water bottle",
+      "present": false,
+      "surface": null,
+      "change": "confirmed absent",
+      "notes": "Owner recorded this as the red-bottle-only test."
+    },
+    {
+      "object": "red water bottle",
+      "object_id": "red-bottle",
+      "description": "red bottle with the blue lid",
+      "previous_verified_sighting": {
+        "video": "IMG_2369.MOV",
+        "room": "Second room",
+        "surface": "white dresser"
+      },
+      "present": true,
+      "surface": "desk",
+      "change": "moved",
+      "evidence": {
+        "timestamp_seconds": 1.0,
+        "source_frame_index": 30
+      }
+    }
+  ]
+}

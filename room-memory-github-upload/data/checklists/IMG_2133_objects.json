@@ -1,0 +1,83 @@
+{
+  "video": "IMG_2133.MOV",
+  "set": "original movement",
+  "room": "Original room",
+  "objects": [
+    {
+      "object": "eyeglasses",
+      "object_id": "glasses",
+      "present": true,
+      "surface": "desk",
+      "change": "first verified sighting",
+      "evidence": {
+        "timestamp_seconds": 0.5,
+        "source_frame_index": 15
+      }
+    },
+    {
+      "object": "remote control",
+      "object_id": "remote",
+      "present": true,
+      "surface": "desk",
+      "change": "first verified sighting",
+      "evidence": {
+        "timestamp_seconds": 3.5,
+        "source_frame_index": 105
+      }
+    },
+    {
+      "object": "compact camera",
+      "object_id": "camera",
+      "present": true,
+      "surface": "desk",
+      "change": "first verified sighting",
+      "evidence": {
+        "timestamp_seconds": 3.0,
+        "source_frame_index": 90
+      }
+    },
+    {
+      "object": "water bottle",
+      "object_id": "original-bottle",
+      "description": "original dark water bottle",
+      "present": true,
+      "surface": "desk",
+      "change": "first verified sighting",
+      "evidence": {
+        "timestamp_seconds": 3.0,
+        "source_frame_index": 90
+      }
+    },
+    {
+      "object": "card holder",
+      "object_id": "card-holder",
+      "present": true,
+      "surface": "desk",
+      "change": "first verified sighting",
+      "evidence": {
+        "timestamp_seconds": 3.0,
+        "source_frame_index": 90
+      }
+    },
+    {
+      "object": "keys",
+      "object_id": "keys",
+      "description": "keys on the patterned lanyard",
+      "present": null,
+      "surface": null,
+      "change": "unverified",
+      "notes": "No verified placement in this clip. This does not establish absence."
+    },
+    {
+      "object": "medicine bottle",
+      "object_id": "medicine-bottle",
+      "present": true,
+      "surface": "desk",
+      "change": "first verified sighting",
+      "evidence": {
+        "timestamp_seconds": 3.0,
+        "source_frame_index": 90
+      }
+    }
+  ]
+}
