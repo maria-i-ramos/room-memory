@@ -1,0 +1,40 @@
+{
+  "video": "IMG_4869 2.mp4",
+  "objects": [
+    {
+      "object": "laptop",
+      "coco_label": "laptop",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "television",
+      "coco_label": "tv",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "couch",
+      "coco_label": "couch",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "glass coffee table",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "speaker",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    }
+  ]
+}

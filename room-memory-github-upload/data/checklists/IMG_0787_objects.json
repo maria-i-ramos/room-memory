@@ -1,0 +1,54 @@
+{
+  "video": "IMG_0787.mp4",
+  "objects": [
+    {
+      "object": "bed",
+      "coco_label": "bed",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "pillow",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "chair",
+      "coco_label": "chair",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "desk/table",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "books",
+      "coco_label": "book",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "basket",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "bag",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    }
+  ]
+}

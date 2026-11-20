@@ -1,0 +1,47 @@
+{
+  "video": "IMG_4867 2.mp4",
+  "objects": [
+    {
+      "object": "handled drink tumbler",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "couch",
+      "coco_label": "couch",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "pillow",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "bag",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "small zippered case",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "charging cable",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "video": "IMG_0040.mp4",
+  "objects": [
+    {
+      "object": "bed",
+      "coco_label": "bed",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "pillow",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "chair",
+      "coco_label": "chair",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "desk/dining table",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "lamp",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "potted plant",
+      "coco_label": "potted plant",
+      "supported_by_yolo11_coco": true,
+      "present": true,
+      "detected_by_yolo": null
+    },
+    {
+      "object": "shelving unit",
+      "coco_label": null,
+      "supported_by_yolo11_coco": false,
+      "present": true,
+      "detected_by_yolo": null
+    }
+  ]
+}
